@@ -1,11 +1,19 @@
-import Image from "next/image";
+import HomeHero from "@/components/sections/home/HomeHero";
+import HomeWhatWeDo from "@/components/sections/home/HomeWhatWeDo";
+import HomeProgramsPreview from "@/components/sections/home/HomeProgramsPreview";
+import HomeEventsStrip from "@/components/sections/home/HomeEventsStrip";
+import HomeFounderStories from "@/components/sections/home/HomeFounderStories";
+import HomeSplit from "@/components/sections/home/HomeSplit";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    
-    <div className="p-10 text-signal-cyan text-5xl">
-      YES
-    </div>
-      
+    <>
+      <HomeHero />
+      <HomeWhatWeDo />
+      <HomeProgramsPreview />
+      <HomeEventsStrip />
+      <HomeFounderStories />
+      <HomeSplit />
+    </>
   );
 }
