@@ -18,7 +18,7 @@ export default function HomeProgramsPreview() {
         />
         </Reveal>
 
-<Reveal>
+        <Reveal>
         <div className="grid gap-4 md:grid-cols-3">
           {programs.slice(0, 3).map((p) => (
             <a
@@ -41,7 +41,7 @@ export default function HomeProgramsPreview() {
             </a>
           ))}
         </div>
-            </Reveal>
+        </Reveal>
 
         <div className="mt-8">
           <Button href="/programs" variant="secondary">
