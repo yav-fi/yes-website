@@ -3,8 +3,10 @@ export type TeamMember = {
   role: string;
   group: "Exec" | "Programs" | "Events" | "Tech" | "Finance" | "Community";
   bio: string;
+  image?: string; // <-- add
   links?: { label: string; href: string }[];
 };
+
 
 export const team: TeamMember[] = [
   {

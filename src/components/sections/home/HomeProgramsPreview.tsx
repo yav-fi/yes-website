@@ -3,17 +3,22 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Chip from "@/components/ui/Chip";
 import { Button } from "@/components/ui/Button";
 import { programs } from "@/data/programs";
+import Reveal from "@/components/ui/Reveal";
+
 
 export default function HomeProgramsPreview() {
   return (
     <section className="py-16">
       <Container>
+        <Reveal>
         <SectionHeading
           eyebrow="Programs"
           title="Pick your lane. Then floor it."
           desc="Whether you’re exploring, building, or scaling — there’s a path."
         />
+        </Reveal>
 
+<Reveal>
         <div className="grid gap-4 md:grid-cols-3">
           {programs.slice(0, 3).map((p) => (
             <a
@@ -36,6 +41,7 @@ export default function HomeProgramsPreview() {
             </a>
           ))}
         </div>
+            </Reveal>
 
         <div className="mt-8">
           <Button href="/programs" variant="secondary">

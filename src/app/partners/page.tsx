@@ -39,14 +39,15 @@ export default function PartnersPage() {
           <SectionHeading eyebrow="Supporters" title="Current partners" />
           <div className="grid gap-4 md:grid-cols-2">
             {partners.map((p) => (
-              <div
-                key={p.name}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6"
-              >
-                <div className="text-lg font-semibold">{p.name}</div>
-                <div className="mt-2 text-white/70">{p.blurb}</div>
-              </div>
-            ))}
+  <div
+    key={p.id}
+    className="rounded-2xl border border-white/10 bg-white/5 p-6"
+  >
+    <div className="text-lg font-semibold">{p.name}</div>
+    <div className="mt-2 text-white/70">{p.blurb}</div>
+  </div>
+))}
+
           </div>
         </div>
 

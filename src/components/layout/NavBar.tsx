@@ -1,50 +1,169 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+
+const links = [
+  { href: "/programs", label: "Programs" },
+  { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
+  { href: "/partners", label: "Partners" },
+];
+
+function NavLink({
+  href,
+  label,
+  active,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+  onClick?: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={[
+        "relative text-sm font-semibold tracking-wide transition",
+        "text-white/75 hover:text-signal-cyan",
+        "hover:[text-shadow:0_0_18px_rgba(56,232,255,0.55)]",
+        active ? "text-white" : "",
+      ].join(" ")}
+    >
+      {label}
+      <span
+        className={[
+          "pointer-events-none absolute -bottom-2 left-0 h-[2px] w-full rounded-full transition",
+          active ? "bg-signal-cyan/70" : "bg-transparent",
+        ].join(" ")}
+      />
+    </Link>
+  );
+}
 
 export default function NavBar() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/70 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/brand/yes-logo.webp"
-            alt="YES"
-            width={34}
-            height={34}
-            className="opacity-90"
+            src="/brand/yes-logo.png"
+            alt="Yale Entrepreneurial Society"
+            width={54}
+            height={54}
+            className="opacity-95 [filter:drop-shadow(0_0_14px_rgba(255,255,255,0.20))_drop-shadow(0_0_18px_rgba(56,232,255,0.18))]"
             priority
           />
-          <div className="leading-tight">
-            <div className="text-sm font-semibold tracking-wide">YES</div>
-            <div className="text-xs text-white/60 -mt-0.5">Yale Builders</div>
-          </div>
+          <div className="leading-tight min-w-0">
+  <div className="text-[13px] font-semibold truncate sm:text-sm">
+    Yale Entrepreneurial Society
+  </div>
+  <div className="hidden text-xs text-white/55 -mt-0.5 sm:block">
+    Building since 1999
+  </div>
+</div>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
-          <Link className="text-white/75 hover:text-white" href="/programs">
-            Programs
-          </Link>
-          <Link className="text-white/75 hover:text-white" href="/events">
-            Events
-          </Link>
-          <Link className="text-white/75 hover:text-white" href="/about">
-            About
-          </Link>
-          <Link className="text-white/75 hover:text-white" href="/team">
-            Team
-          </Link>
-          <Link className="text-white/75 hover:text-white" href="/partners">
-            Partners
-          </Link>
+        <nav className="hidden items-center gap-7 md:flex">
+          {links.map((l) => (
+            <NavLink
+              key={l.href}
+              href={l.href}
+              label={l.label}
+              active={pathname === l.href || (l.href !== "/" && pathname.startsWith(l.href))}
+            />
+          ))}
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href="/join" variant="primary">
+          <Link
+            href="/join"
+            className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
+          >
             Join
-          </Button>
+          </Link>
+
+          <button
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={18} />
+          </button>
         </div>
       </div>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+          >
+            <motion.div
+              className="absolute top-0 left-0 right-0 border-b border-white/10 bg-background/90"
+              initial={{ y: -24, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -24, opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-6 py-4">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/brand/yes-logo.png"
+                    alt="YES"
+                    width={44}
+                    height={44}
+                    className="opacity-95 [filter:drop-shadow(0_0_14px_rgba(255,255,255,0.18))]"
+                  />
+                  <div className="text-sm font-semibold">Yale Entrepreneurial Society</div>
+                </div>
+                <button
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 hover:bg-white/10 transition"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+
+              <div className="px-6 pb-6">
+                <div className="grid gap-4">
+                  {links.map((l) => (
+                    <NavLink
+                      key={l.href}
+                      href={l.href}
+                      label={l.label}
+                      active={pathname === l.href || pathname.startsWith(l.href)}
+                      onClick={() => setOpen(false)}
+                    />
+                  ))}
+
+                  <Link
+                    href="/join"
+                    onClick={() => setOpen(false)}
+                    className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
+                  >
+                    Join
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

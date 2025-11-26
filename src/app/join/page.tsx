@@ -51,13 +51,6 @@ export default function JoinPage() {
           </Card>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6">
-          <div className="text-lg font-semibold">Next upgrade</div>
-          <p className="mt-2 text-white/70">
-            Swap these placeholder buttons to a Typeform/Airtable link now — later
-            we can connect Supabase + real analytics events.
-          </p>
-        </div>
       </Container>
     </section>
   );
