@@ -60,7 +60,7 @@ export default function NavBar() {
             alt="Yale Entrepreneurial Society"
             width={54}
             height={54}
-            className="opacity-95 [filter:drop-shadow(0_0_14px_rgba(255,255,255,0.20))_drop-shadow(0_0_18px_rgba(56,232,255,0.18))]"
+            className="opacity-95"
             priority
           />
           <div className="leading-tight min-w-0">
@@ -126,7 +126,7 @@ export default function NavBar() {
                     alt="YES"
                     width={44}
                     height={44}
-                    className="opacity-95 [filter:drop-shadow(0_0_14px_rgba(255,255,255,0.18))]"
+                    className="opacity-95"
                   />
                   <div className="text-sm font-semibold">Yale Entrepreneurial Society</div>
                 </div>

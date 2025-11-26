@@ -9,7 +9,7 @@ import HomeSplit from "@/components/sections/home/HomeSplit";
 
 export default function HomeGate() {
   return (
-    <LoadGate minMs={1400}>
+    <LoadGate minMs={1400} onceKey="home-load">
       {(play) => (
         <>
           <HomeHero play={play} />

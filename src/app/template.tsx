@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -16,6 +17,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         transition={{ duration: 0.22, ease: "easeOut" }}
       >
         {children}
+        <Analytics/>
       </motion.div>
     </AnimatePresence>
   );

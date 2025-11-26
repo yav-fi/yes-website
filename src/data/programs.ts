@@ -15,7 +15,7 @@ export type Program = {
 export const programs: Program[] = [
   {
     slug: "launch",
-    name: "YES Launch",
+    name: "Launch Camp Yale Program",
     oneLiner: "A fast, founder-first sprint from idea to MVP.",
     description:
       "A structured program designed to help you validate an idea, build an MVP, and get real user feedback quickly.",
@@ -26,11 +26,6 @@ export const programs: Program[] = [
     outcomes: ["A shipped MVP", "User feedback loop", "Pitch-ready narrative"],
     timeline: [
       { label: "Week 1", detail: "Idea selection + problem interviews" },
-      { label: "Week 2", detail: "MVP scope + prototype testing" },
-      { label: "Week 3", detail: "Build sprint + first users" },
-      { label: "Week 4", detail: "Iteration + distribution" },
-      { label: "Week 5", detail: "Pitch + metrics" },
-      { label: "Week 6", detail: "Demo night" },
     ],
     faq: [
       { q: "Do I need a team?", a: "Not required. We can help you find one." },
