@@ -9,12 +9,13 @@ export function generateStaticParams() {
   return programs.map((p) => ({ slug: p.slug }));
 }
 
-export default function ProgramLaunchPage({
+export default async function ProgramLaunchPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const program = programs.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const program = programs.find((p) => p.slug === slug);
   if (!program) return notFound();
 
   return (

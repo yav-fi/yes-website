@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container";
 import Chip from "@/components/ui/Chip";
 import { Button } from "@/components/ui/Button";
 
+
 export default function HomeHero({ play }: { play: boolean }) {
   const reduce = useReducedMotion();
 
@@ -52,26 +53,24 @@ export default function HomeHero({ play }: { play: boolean }) {
           </motion.div> */}
 
           <motion.h1
-            variants={item}
             className="mt-7 text-balance text-5xl font-semibold tracking-tight md:text-7xl"
           >
-            Where Yale builds what’s next.
+            Where Yalies build what’s next.
           </motion.h1>
 
           <motion.p
-            variants={item}
             className="mt-6 max-w-xl text-lg text-white/75 md:text-xl"
           >
             Programs, mentorship, and events built for founders, builders, and operators —
             designed to turn momentum into outcomes.
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
+          <motion.div className="mt-10 flex flex-wrap gap-3">
             <Button href="/join" variant="primary">Join YES</Button>
             <Button href="/programs" variant="secondary">Explore Programs</Button>
           </motion.div>
 
-          <motion.div variants={item} className="mt-12 flex flex-wrap gap-8 text-sm text-white/70">
+          <motion.div className="mt-12 flex flex-wrap gap-8 text-sm text-white/70">
             <div><span className="text-white">450+</span> members</div>
             <div><span className="text-white">60+</span> events/year</div>
             <div><span className="text-white">∞</span> builder energy</div>

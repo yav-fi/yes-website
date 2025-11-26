@@ -12,9 +12,7 @@ async function waitForDecode(src: string) {
   try {
     const img = new Image();
     img.src = src;
-    // @ts-expect-error
-    if (img.decode) {
-      // @ts-expect-error
+    if (typeof img.decode === "function") {
       await img.decode();
     } else {
       await new Promise<void>((resolve) => {
@@ -62,15 +60,21 @@ export default function LoadGate({
 
     startRef.current = performance.now();
 
+    const fontSet = (document as Document & { fonts?: FontFaceSet }).fonts;
     const fontsReady =
-      // @ts-expect-error
-      document.fonts?.ready?.then(() => (fontsDone = true)).catch(() => null) ?? Promise.resolve(null);
+      fontSet?.ready
+        ?.then(() => {
+          fontsDone = true;
+        })
+        .catch(() => null) ?? Promise.resolve(null);
 
     const decodeReady = waitForDecode("/brand/yes-logo.webp").then(() => {
       decodeDone = true;
     });
 
-    const onLoad = () => { loadDone = true; };
+    const onLoad = () => {
+      loadDone = true;
+    };
     if (document.readyState === "complete") loadDone = true;
     window.addEventListener("load", onLoad, { once: true });
 
