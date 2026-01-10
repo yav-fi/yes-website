@@ -49,6 +49,11 @@ export const programs: Program[] = [
         href: "https://luma.com/calendar/cal-KBJ4GfUNku5BJ53",
         variant: "secondary",
       },
+      {
+        label: "Signal website",
+        href: "https://signal.community/",
+        variant: "secondary",
+      },
     ],
     sections: [
       {
@@ -68,20 +73,6 @@ export const programs: Program[] = [
           "David Lucchino (Frequency Therapeutics)",
           "Seth Goldman (Honest Tea Founder)",
           "Miles Lasater (Founder of Yale Entrepreneurial Society)",
-        ],
-      },
-      {
-        title: "Links",
-        links: [
-          { label: "Signal website", href: "https://signal.community/" },
-          {
-            label: "Application",
-            href: "https://docs.google.com/forms/d/e/1FAIpQLSdWD6LRvrTga_ZsK_Wb0qdosIY72gAOa807nmC61w4kiUTXNQ/viewform?usp=header",
-          },
-          {
-            label: "Luma calendar",
-            href: "https://luma.com/calendar/cal-KBJ4GfUNku5BJ53",
-          },
         ],
       },
       {

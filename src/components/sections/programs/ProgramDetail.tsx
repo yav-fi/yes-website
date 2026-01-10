@@ -88,6 +88,83 @@ export default function ProgramDetail({ program }: { program: Program }) {
         )}
       </div>
 
+      {sections.length > 0 && (
+        <div className="mt-10 md:hidden">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="text-xs font-semibold tracking-[0.18em] text-white/60">
+              ON THIS PAGE
+            </div>
+            <div className="mt-5 flex gap-4">
+              <div className="relative">
+                <div className="relative flex flex-col items-center gap-4 py-1">
+                  <div className="absolute inset-y-1 left-1/2 w-px -translate-x-1/2 bg-white/15" />
+                  <motion.div
+                    className="absolute left-1/2 top-1 w-px -translate-x-1/2 bg-signal-cyan/70"
+                    animate={{ height: `${progress}%` }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                  />
+                  {sections.map((section, index) => {
+                    const active = index <= activeIndex;
+                    return (
+                      <button
+                        key={section.id}
+                        type="button"
+                        onClick={() => scrollToSection(section.id)}
+                        className="relative z-10 flex h-5 w-5 items-center justify-center"
+                        aria-label={`Jump to ${section.title}`}
+                      >
+                        <motion.span
+                          className={[
+                            "h-2.5 w-2.5 rounded-full border",
+                            active
+                              ? "border-signal-cyan/80 bg-signal-cyan/70"
+                              : "border-white/25 bg-black/60",
+                          ].join(" ")}
+                          animate={{ scale: active ? 1.15 : 1 }}
+                          transition={{ duration: 0.2 }}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <ul className="space-y-4 text-sm text-white/70">
+                {sections.map((section, index) => (
+                  <li key={section.id}>
+                    <button
+                      type="button"
+                      onClick={() => scrollToSection(section.id)}
+                      className={[
+                        "text-left transition hover:text-white",
+                        index === activeIndex ? "text-white" : "",
+                      ].join(" ")}
+                    >
+                      {section.title}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {program.ctas && program.ctas.length > 0 && (
+              <div className="mt-6 flex flex-col gap-2">
+                {program.ctas.map((cta, index) => (
+                  <Button
+                    key={cta.label}
+                    href={cta.href}
+                    variant={cta.variant ?? (index === 0 ? "primary" : "secondary")}
+                    className="w-full"
+                  >
+                    {cta.label}
+                  </Button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       <div className="mt-12 grid gap-10 md:grid-cols-[minmax(0,1fr)_220px]">
         <div className="space-y-10">
           {sections.map((section) => (
