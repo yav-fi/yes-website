@@ -11,7 +11,7 @@ export default function ProgramsPage() {
           <SectionHeading
             eyebrow="Programs"
             title="Programs for every kind of builder."
-            desc="Explore, build, and scale with real cadence and real people."
+            desc="Fellowships, dinners, and a hacker house for builders who want to ship."
           />
         </Reveal>
         <Reveal delay={0.08}>

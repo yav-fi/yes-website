@@ -3,73 +3,131 @@ export type Program = {
   name: string;
   oneLiner: string;
   description: string;
-  intensity: 1 | 2 | 3;
-  stage: "Explore" | "Build" | "Scale";
-  duration: string;
-  tags: string[];
-  outcomes: string[];
-  timeline: { label: string; detail: string }[];
-  faq: { q: string; a: string }[];
+  badge?: string;
+  cardCtaLabel?: string;
+  ctas?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
+  sections?: {
+    title: string;
+    body?: string;
+    items?: string[];
+    links?: { label: string; href?: string }[];
+  }[];
 };
 
 export const programs: Program[] = [
   {
-    slug: "launch",
-    name: "Launch Camp Yale Program",
-    oneLiner: "A fast, founder-first sprint from idea to MVP.",
-    description:
-      "A structured program designed to help you validate an idea, build an MVP, and get real user feedback quickly.",
-    intensity: 3,
-    stage: "Build",
-    duration: "6 weeks",
-    tags: ["Beginner-friendly", "Team-based", "Mentorship", "Weekly demos"],
-    outcomes: ["A shipped MVP", "User feedback loop", "Pitch-ready narrative"],
-    timeline: [
-      { label: "Week 1", detail: "Idea selection + problem interviews" },
-    ],
-    faq: [
-      { q: "Do I need a team?", a: "Not required. We can help you find one." },
+    slug: "high-school-fellowship",
+    name: "High School Fellowship",
+    oneLiner: "A fellowship for ambitious high school founders. Details coming soon.",
+    description: "Program description coming soon.",
+    badge: "Fellowship",
+    cardCtaLabel: "Learn more",
+    sections: [
       {
-        q: "Do I need to code?",
-        a: "No — but technical builders get extra leverage.",
+        title: "Applications",
+        links: [
+          { label: "Application (coming soon)" },
+          { label: "Become an ambassador (coming soon)" },
+        ],
       },
     ],
   },
   {
-    slug: "builders",
-    name: "Builders Guild",
-    oneLiner: "A crew for technical builders who ship every week.",
+    slug: "signal-dinner-series",
+    name: "Signal Dinner Series",
+    oneLiner:
+      "Off-record dinners connecting Yale's highest-momentum builders with leading founders.",
     description:
-      "Weekly build nights, micro-sprints, and a community of people who actually execute.",
-    intensity: 2,
-    stage: "Build",
-    duration: "Ongoing",
-    tags: ["Technical", "Shipping cadence", "Peer feedback"],
-    outcomes: ["Portfolio projects", "Collaborators", "Momentum"],
-    timeline: [
-      { label: "Weekly", detail: "Build night + demos" },
-      { label: "Monthly", detail: "Mini-hack + showcase" },
+      "Signal is an off-record dinner series that brings together Yale's highest-momentum student builders with leading founders, investors, and operators in a candid setting. For builders, it offers first-hand context from the people shaping technology and the chance to ask the questions that directly inform what they're building. For guests, it is an opportunity to guide builders who are just a few steps behind where they were, while forming early relationships with the next generation of category-defining founders.",
+    badge: "Dinner Series",
+    cardCtaLabel: "Learn more",
+    ctas: [
+      {
+        label: "Apply to attend",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSdWD6LRvrTga_ZsK_Wb0qdosIY72gAOa807nmC61w4kiUTXNQ/viewform?usp=header",
+        variant: "primary",
+      },
+      {
+        label: "View calendar",
+        href: "https://luma.com/calendar/cal-KBJ4GfUNku5BJ53",
+        variant: "secondary",
+      },
     ],
-    faq: [
-      { q: "What if I’m new?", a: "We’ll pair you with builders at your level." },
+    sections: [
+      {
+        title: "Past attendees",
+        items: [
+          "Cory Levy (Z Fellows)",
+          "Harris Stolzenberg (Pear VC)",
+          "Kathryn Guarini (IBM)",
+          "Ranjit Bindera (Cybrexa)",
+          "David Brillembourg (Dune VC)",
+          "Ann Muira-Ko (Floodgate)",
+          "Arthur Horwich",
+          "Bary Nalebuff (Honest Tea Founder)",
+          "Tom Lee (Galileo)",
+          "Nick Chirls (Asylum VC)",
+          "George Yancopoulos (Regeneron Founder)",
+          "David Lucchino (Frequency Therapeutics)",
+          "Seth Goldman (Honest Tea Founder)",
+          "Miles Lasater (Founder of Yale Entrepreneurial Society)",
+        ],
+      },
+      {
+        title: "Links",
+        links: [
+          { label: "Signal website", href: "https://signal.community/" },
+          {
+            label: "Application",
+            href: "https://docs.google.com/forms/d/e/1FAIpQLSdWD6LRvrTga_ZsK_Wb0qdosIY72gAOa807nmC61w4kiUTXNQ/viewform?usp=header",
+          },
+          {
+            label: "Luma calendar",
+            href: "https://luma.com/calendar/cal-KBJ4GfUNku5BJ53",
+          },
+        ],
+      },
+      {
+        title: "Contact",
+        body: "Do you think you would be a cool guest? Contact us:",
+        links: [
+          { label: "Leia.ryan@yale.edu", href: "mailto:Leia.ryan@yale.edu" },
+          { label: "Jasmine.garry@yale.edu", href: "mailto:Jasmine.garry@yale.edu" },
+          { label: "Soleil.Wizman@yale.edu", href: "mailto:Soleil.Wizman@yale.edu" },
+        ],
+      },
     ],
   },
   {
-    slug: "office-hours",
-    name: "Mentor Office Hours",
-    oneLiner: "Fast feedback from alumni and operators.",
+    slug: "yale-hacker-house",
+    name: "Yale's First Hacker House - Summer 2026",
+    oneLiner: "A 10-week, live-in SF house for 12 Yale technical founders.",
     description:
-      "Sign up for high-signal 20-minute sessions on product, growth, fundraising, and technical strategy.",
-    intensity: 1,
-    stage: "Scale",
-    duration: "Rolling",
-    tags: ["Alumni", "Operators", "Focused feedback"],
-    outcomes: ["Decision clarity", "Warm intros (sometimes)", "Tighter strategy"],
-    timeline: [{ label: "Rolling", detail: "Sign-ups open throughout the term" }],
-    faq: [
+      "This Summer 2026, YES is creating Yale's First Hacker House in SF - a 10-week, live-in environment for 12 of Yale's top technical student founders to build seriously, learn from world-class operators, and plug directly into the SF ecosystem. This is just the beginning. Join us.",
+    badge: "Hacker House",
+    cardCtaLabel: "Apply",
+    ctas: [
       {
-        q: "Who are the mentors?",
-        a: "Alumni founders, VCs, and experienced operators.",
+        label: "Apply",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSeNNhvuHI3ALUosGiLUh0cWQQMVC_z9pcvINWT9yIKb41kDoA/viewform?usp=header",
+        variant: "primary",
+      },
+    ],
+    sections: [
+      {
+        title: "How it works",
+        body:
+          "Rather than enforcing a rigid curriculum, we're designing the house around the founders we select. The house will combine intense building with the opportunity to gain real context: intimate dinners, technical deep-dives, and targeted mentor sessions - all designed to inform what founders are building and how they build it.",
+      },
+      {
+        title: "Why it matters",
+        body:
+          "For founders, the house provides the space to develop and pressure-test ideas before taking the leap to build full-time. For our partners, it offers early access to founders as they transition from early teams into ventures that we hope will define the next wave of technology.",
+      },
+      {
+        title: "Partner inquiries",
+        body: "Interested in becoming a partner? Contact us:",
+        links: [{ label: "Leia.ryan@yale.edu", href: "mailto:Leia.ryan@yale.edu" }],
       },
     ],
   },
