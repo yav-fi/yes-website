@@ -140,8 +140,9 @@ export default function NavBar() {
                 </button>
               </div>
 
-              <div className="flex flex-1 flex-col justify-center px-6 pb-10">
-                <div className="grid gap-6 text-2xl font-semibold">
+              <div className="flex flex-1 flex-col px-6 pb-10">
+                <div className="flex flex-1 flex-col justify-center">
+                  <div className="flex flex-1 flex-col justify-between py-6 text-2xl font-semibold">
                   {links.map((l) => (
                     <NavLink
                       key={l.href}
@@ -160,6 +161,7 @@ export default function NavBar() {
                   >
                     Join
                   </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
