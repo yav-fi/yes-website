@@ -3,7 +3,6 @@ export type Program = {
   name: string;
   oneLiner: string;
   description: string;
-  badge?: string;
   cardCtaLabel?: string;
   ctas?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
   sections?: {
@@ -20,7 +19,6 @@ export const programs: Program[] = [
     name: "High School Fellowship",
     oneLiner: "A fellowship for ambitious high school founders. Details coming soon.",
     description: "Program description coming soon.",
-    badge: "Fellowship",
     cardCtaLabel: "Learn more",
     sections: [
       {
@@ -39,7 +37,6 @@ export const programs: Program[] = [
       "Off-record dinners connecting Yale's highest-momentum builders with leading founders.",
     description:
       "Signal is an off-record dinner series that brings together Yale's highest-momentum student builders with leading founders, investors, and operators in a candid setting. For builders, it offers first-hand context from the people shaping technology and the chance to ask the questions that directly inform what they're building. For guests, it is an opportunity to guide builders who are just a few steps behind where they were, while forming early relationships with the next generation of category-defining founders.",
-    badge: "Dinner Series",
     cardCtaLabel: "Learn more",
     ctas: [
       {
@@ -104,7 +101,6 @@ export const programs: Program[] = [
     oneLiner: "A 10-week, live-in SF house for 12 Yale technical founders.",
     description:
       "This Summer 2026, YES is creating Yale's First Hacker House in SF - a 10-week, live-in environment for 12 of Yale's top technical student founders to build seriously, learn from world-class operators, and plug directly into the SF ecosystem. This is just the beginning. Join us.",
-    badge: "Hacker House",
     cardCtaLabel: "Apply",
     ctas: [
       {

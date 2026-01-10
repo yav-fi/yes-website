@@ -1,7 +1,6 @@
 "use client";
 
 import { programs } from "@/data/programs";
-import Chip from "@/components/ui/Chip";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 
 export default function ProgramsGrid() {
@@ -31,10 +30,7 @@ export default function ProgramsGrid() {
                   "hover:border-white/20 hover:bg-white/[0.06]",
                 ].join(" ")}
               >
-                <div className="flex items-center justify-between gap-3">
-                  <div className="text-lg font-semibold">{p.name}</div>
-                  {p.badge && <Chip tone="blue">{p.badge}</Chip>}
-                </div>
+                <div className="text-lg font-semibold">{p.name}</div>
                 <p className="mt-3 text-white/70">{p.oneLiner}</p>
                 <div className="mt-5 text-sm font-semibold text-white/80">
                   {p.cardCtaLabel ?? "Learn more"}{" "}
