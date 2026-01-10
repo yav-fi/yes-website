@@ -19,11 +19,13 @@ function NavLink({
   label,
   active,
   onClick,
+  className,
 }: {
   href: string;
   label: string;
   active: boolean;
   onClick?: () => void;
+  className?: string;
 }) {
   return (
     <Link
@@ -34,6 +36,7 @@ function NavLink({
         "text-white/75 hover:text-signal-cyan",
         "hover:[text-shadow:0_0_18px_rgba(56,232,255,0.55)]",
         active ? "text-white" : "",
+        className ?? "",
       ].join(" ")}
     >
       {label}
@@ -105,21 +108,19 @@ export default function NavBar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-md md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setOpen(false)}
           >
             <motion.div
-              className="absolute top-0 left-0 right-0 border-b border-white/10 bg-background/90"
-              initial={{ y: -24, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -24, opacity: 0 }}
+              className="flex h-full flex-col"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between px-6 py-4">
+              <div className="flex items-center justify-between px-6 py-6">
                 <div className="flex items-center gap-3">
                   <Image
                     src="/brand/yes-logo.png"
@@ -139,8 +140,8 @@ export default function NavBar() {
                 </button>
               </div>
 
-              <div className="px-6 pb-6">
-                <div className="grid gap-4">
+              <div className="flex flex-1 flex-col justify-center px-6 pb-10">
+                <div className="grid gap-6 text-2xl font-semibold">
                   {links.map((l) => (
                     <NavLink
                       key={l.href}
@@ -148,13 +149,14 @@ export default function NavBar() {
                       label={l.label}
                       active={pathname === l.href || pathname.startsWith(l.href)}
                       onClick={() => setOpen(false)}
+                      className="text-2xl"
                     />
                   ))}
 
                   <Link
                     href="/join"
                     onClick={() => setOpen(false)}
-                    className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
+                    className="mt-2 inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
                   >
                     Join
                   </Link>

@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { programs } from "@/data/programs";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+
+const MotionLink = motion(Link);
 
 export default function ProgramsGrid() {
   return (
@@ -14,7 +17,7 @@ export default function ProgramsGrid() {
         >
           <AnimatePresence initial={false} mode="sync">
             {programs.map((p) => (
-              <motion.a
+              <MotionLink
                 key={p.slug}
                 href={`/programs/${p.slug}`}
                 layout="position"
@@ -36,7 +39,7 @@ export default function ProgramsGrid() {
                   {p.cardCtaLabel ?? "Learn more"}{" "}
                   <span className="text-white/40">↗</span>
                 </div>
-              </motion.a>
+              </MotionLink>
             ))}
           </AnimatePresence>
         </motion.div>

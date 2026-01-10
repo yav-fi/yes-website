@@ -79,8 +79,8 @@ export const programs: Program[] = [
         title: "Contact",
         body: "Do you think you would be a cool guest? Contact us:",
         links: [
-          { label: "Leia.ryan@yale.edu", href: "mailto:Leia.ryan@yale.edu" },
-          { label: "Jasmine.garry@yale.edu", href: "mailto:Jasmine.garry@yale.edu" },
+          { label: "Leia.Ryan@yale.edu", href: "mailto:Leia.Ryan@yale.edu" },
+          { label: "Jasmine.Garry@yale.edu", href: "mailto:Jasmine.Garry@yale.edu" },
           { label: "Soleil.Wizman@yale.edu", href: "mailto:Soleil.Wizman@yale.edu" },
         ],
       },
@@ -114,7 +114,7 @@ export const programs: Program[] = [
       {
         title: "Partner inquiries",
         body: "Interested in becoming a partner? Contact us:",
-        links: [{ label: "Leia.ryan@yale.edu", href: "mailto:Leia.ryan@yale.edu" }],
+        links: [{ label: "Leia.Ryan@yale.edu", href: "mailto:Leia.Ryan@yale.edu" }],
       },
     ],
   },
