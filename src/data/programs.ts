@@ -32,10 +32,16 @@ export const programs: Program[] = [
         variant: "primary",
       },
       {
-        label: "Application for Yale students",
+        label: "Application for financial aid",
         href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
         variant: "secondary",
       },
+      {
+        label: "Application for Yale students",
+        href: "https://forms.gle/UauNG18MQ3u387WVA",
+        variant: "secondary",
+      },
+
     ],
     sections: [
       {
@@ -47,6 +53,11 @@ export const programs: Program[] = [
             href: "https://forms.gle/VSN1KPsPi5Gzben88",
             variant: "primary",
           },
+       {
+        label: "Apply for financial aid",
+        href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
+        variant: "secondary",
+      },
         ],
         subsections: [
           {
@@ -106,6 +117,11 @@ export const programs: Program[] = [
                 href: "https://forms.gle/VSN1KPsPi5Gzben88",
                 variant: "primary",
               },
+     {
+        label: "Apply for financial aid",
+        href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
+        variant: "secondary",
+      },
             ],
           },
         ],
