@@ -19,6 +19,7 @@ type DetailSection = {
   extra?: string;
   items?: string[];
   links?: { label: string; href?: string }[];
+  actions?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
 };
 
 export default function ProgramDetail({ program }: { program: Program }) {
@@ -127,6 +128,19 @@ export default function ProgramDetail({ program }: { program: Program }) {
                     </li>
                   ))}
                 </ul>
+              )}
+              {section.actions && (
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {section.actions.map((action, index) => (
+                    <Button
+                      key={action.label}
+                      href={action.href}
+                      variant={action.variant ?? (index === 0 ? "primary" : "secondary")}
+                    >
+                      {action.label}
+                    </Button>
+                  ))}
+                </div>
               )}
             </section>
           ))}
