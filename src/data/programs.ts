@@ -27,12 +27,12 @@ export const programs: Program[] = [
     cardCtaLabel: "Apply",
     ctas: [
       {
-        label: "Apply",
+        label: "Application for high schoolers",
         href: "https://forms.gle/VSN1KPsPi5Gzben88",
         variant: "primary",
       },
       {
-        label: "Alternate application",
+        label: "Application for Yale students",
         href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
         variant: "secondary",
       },
@@ -46,11 +46,6 @@ export const programs: Program[] = [
             label: "Apply",
             href: "https://forms.gle/VSN1KPsPi5Gzben88",
             variant: "primary",
-          },
-          {
-            label: "Alternate application",
-            href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
-            variant: "secondary",
           },
         ],
         subsections: [
@@ -73,6 +68,36 @@ export const programs: Program[] = [
             ],
           },
           {
+            title: "Program dates",
+            body: "All sessions begin at 11:00 A.M. EST.",
+            items: [
+              "February 7, 2026",
+              "February 14, 2026",
+              "February 21, 2026",
+              "February 28, 2026",
+              "March 7, 2026 (Masterclass)",
+              "March 14, 2026 (Masterclass)",
+              "March 28, 2026",
+              "April 11, 2026 (Pitch Day / Finals)",
+            ],
+          },
+          {
+            title: "Pitch Day",
+            body: "Pitch your idea to a panel of:",
+            items: [
+              "Yale School of Management entrepreneurship experts",
+              "Serial entrepreneurs",
+              "Startup operators and mentors",
+            ],
+          },
+          {
+            title: "Cost",
+            items: [
+              "Full program cost for one 8-week session: $400",
+              "YES offers need-based financial aid that can cover the full cost for domestic and international students",
+            ],
+          },
+          {
             title: "Apply",
             body: "Applications for the Spring 2026 cohort are now open!",
             actions: [
@@ -80,11 +105,6 @@ export const programs: Program[] = [
                 label: "Apply",
                 href: "https://forms.gle/VSN1KPsPi5Gzben88",
                 variant: "primary",
-              },
-              {
-                label: "Alternate application",
-                href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
-                variant: "secondary",
               },
             ],
           },
@@ -126,41 +146,6 @@ export const programs: Program[] = [
                 href: "https://forms.gle/UauNG18MQ3u387WVA",
                 variant: "primary",
               },
-            ],
-          },
-        ],
-      },
-      {
-        title: "Program details",
-        subsections: [
-          {
-            title: "Program dates",
-            body: "All sessions begin at 11:00 A.M. EST.",
-            items: [
-              "February 7, 2026",
-              "February 14, 2026",
-              "February 21, 2026",
-              "February 28, 2026",
-              "March 7, 2026 (Masterclass)",
-              "March 14, 2026 (Masterclass)",
-              "March 28, 2026",
-              "April 11, 2026 (Pitch Day / Finals)",
-            ],
-          },
-          {
-            title: "Pitch Day",
-            body: "Pitch your idea to a panel of:",
-            items: [
-              "Yale School of Management entrepreneurship experts",
-              "Serial entrepreneurs",
-              "Startup operators and mentors",
-            ],
-          },
-          {
-            title: "Cost",
-            items: [
-              "Full program cost for one 8-week session: $400",
-              "YES offers need-based financial aid that can cover the full cost for domestic and international students",
             ],
           },
         ],
