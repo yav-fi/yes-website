@@ -12,7 +12,7 @@ function sectionId(title: string) {
     .replace(/(^-|-$)/g, "");
 }
 
-type DetailSection = ProgramSection & {
+type DetailSection = Omit<ProgramSection, "subsections"> & {
   id: string;
   extra?: string;
   subsections?: DetailSection[];
@@ -27,9 +27,11 @@ type NavItem = {
 export default function ProgramDetail({ program }: { program: Program }) {
   const { scrollY } = useScroll();
   const sections = useMemo<DetailSection[]>(() => {
-    const addIds = (section: ProgramSection, parentTitle?: string): DetailSection => {
-      const id = sectionId(parentTitle ? `${parentTitle}-${section.title}` : section.title);
-      const subsections = section.subsections?.map((sub) => addIds(sub, section.title));
+    const addIds = (section: ProgramSection, trail: string[]): DetailSection => {
+      const id = sectionId(trail.join("-"));
+      const subsections = section.subsections?.map((sub) =>
+        addIds(sub, [...trail, sub.title])
+      );
       return { ...section, id, subsections };
     };
 
@@ -40,7 +42,8 @@ export default function ProgramDetail({ program }: { program: Program }) {
       extra: program.oneLiner,
     };
 
-    const rest = program.sections?.map((section) => addIds(section)) ?? [];
+    const rest =
+      program.sections?.map((section) => addIds(section, [section.title])) ?? [];
     return [overview, ...rest];
   }, [program.description, program.oneLiner, program.sections]);
   const navItems = useMemo<NavItem[]>(() => {
@@ -128,6 +131,34 @@ export default function ProgramDetail({ program }: { program: Program }) {
     </>
   );
 
+  const renderSections = (items: DetailSection[], depth = 0) =>
+    items.map((section) => {
+      const HeadingTag = depth === 0 ? "h2" : depth === 1 ? "h3" : "h4";
+      const headingClass =
+        depth === 0
+          ? "text-2xl font-semibold"
+          : depth === 1
+          ? "text-lg font-semibold text-white/90"
+          : "text-base font-semibold text-white/85";
+      const sectionClass =
+        depth === 0
+          ? "scroll-mt-28 border-t border-white/10 pt-8"
+          : "scroll-mt-28 pt-4";
+      const childSpacing = depth === 0 ? "mt-6 space-y-8" : "mt-5 space-y-6";
+
+      return (
+        <section key={section.id} id={section.id} className={sectionClass}>
+          <HeadingTag className={headingClass}>{section.title}</HeadingTag>
+          {renderSectionContent(section)}
+          {section.subsections && section.subsections.length > 0 && (
+            <div className={childSpacing}>
+              {renderSections(section.subsections, depth + 1)}
+            </div>
+          )}
+        </section>
+      );
+    });
+
   return (
     <div className="relative">
       <div className="mt-4">
@@ -153,30 +184,7 @@ export default function ProgramDetail({ program }: { program: Program }) {
       </div>
 
       <div className="mt-12 grid gap-10 md:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="space-y-12">
-          {sections.map((section) => (
-            <section
-              key={section.id}
-              id={section.id}
-              className="scroll-mt-28 border-t border-white/10 pt-8"
-            >
-              <h2 className="text-2xl font-semibold">{section.title}</h2>
-              {renderSectionContent(section)}
-              {section.subsections && section.subsections.length > 0 && (
-                <div className="mt-6 space-y-8">
-                  {section.subsections.map((subsection) => (
-                    <div key={subsection.id} id={subsection.id} className="scroll-mt-28">
-                      <h3 className="text-lg font-semibold text-white/90">
-                        {subsection.title}
-                      </h3>
-                      {renderSectionContent(subsection)}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </section>
-          ))}
-        </div>
+        <div className="space-y-12">{renderSections(sections)}</div>
 
         {navItems.length > 0 && (
           <aside className="hidden md:block">
@@ -195,7 +203,8 @@ export default function ProgramDetail({ program }: { program: Program }) {
                     />
                     {navItems.map((item, index) => {
                       const active = index <= activeIndex;
-                      const dotSize = item.depth === 0 ? "h-2.5 w-2.5" : "h-2 w-2";
+                      const dotSize =
+                        item.depth === 0 ? "h-2.5 w-2.5" : item.depth === 1 ? "h-2 w-2" : "h-1.5 w-1.5";
                       return (
                         <button
                           key={item.id}
@@ -229,9 +238,14 @@ export default function ProgramDetail({ program }: { program: Program }) {
                         onClick={() => scrollToSection(item.id)}
                         className={[
                           "text-left transition hover:text-white",
-                          item.depth === 0 ? "text-sm" : "pl-3 text-xs text-white/60",
+                          item.depth === 0
+                            ? "text-sm text-white/80"
+                            : item.depth === 1
+                            ? "text-xs text-white/60"
+                            : "text-[11px] text-white/50",
                           index === activeIndex ? "text-white" : "",
                         ].join(" ")}
+                        style={{ paddingLeft: item.depth * 12 }}
                       >
                         {item.title}
                       </button>
