@@ -79,6 +79,55 @@ export default function ProgramDetail({ program }: { program: Program }) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
+  const renderSectionContent = (section: DetailSection) => (
+    <>
+      {section.body && (
+        <p className="mt-3 max-w-2xl text-white/70">{section.body}</p>
+      )}
+      {section.extra && (
+        <p className="mt-3 max-w-2xl text-white/70">{section.extra}</p>
+      )}
+      {section.items && (
+        <ul className="mt-4 space-y-2 text-white/70">
+          {section.items.map((item) => (
+            <li key={item}>• {item}</li>
+          ))}
+        </ul>
+      )}
+      {section.links && (
+        <ul className="mt-4 space-y-2 text-white/70">
+          {section.links.map((link) => (
+            <li key={link.label}>
+              {link.href ? (
+                <a
+                  href={link.href}
+                  className="underline decoration-white/30 underline-offset-4 transition hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <span>{link.label}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+      {section.actions && (
+        <div className="mt-5 flex flex-wrap gap-2">
+          {section.actions.map((action, index) => (
+            <Button
+              key={action.label}
+              href={action.href}
+              variant={action.variant ?? (index === 0 ? "primary" : "secondary")}
+            >
+              {action.label}
+            </Button>
+          ))}
+        </div>
+      )}
+    </>
+  );
+
   return (
     <div className="relative">
       <div className="mt-4">
@@ -104,55 +153,24 @@ export default function ProgramDetail({ program }: { program: Program }) {
       </div>
 
       <div className="mt-12 grid gap-10 md:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="space-y-10">
+        <div className="space-y-12">
           {sections.map((section) => (
             <section
-              key={section.title}
+              key={section.id}
               id={section.id}
               className="scroll-mt-28 border-t border-white/10 pt-8"
             >
-              <h2 className="text-xl font-semibold">{section.title}</h2>
-              {section.body && (
-                <p className="mt-3 max-w-2xl text-white/70">{section.body}</p>
-              )}
-              {section.extra && (
-                <p className="mt-3 max-w-2xl text-white/70">{section.extra}</p>
-              )}
-              {section.items && (
-                <ul className="mt-4 space-y-2 text-white/70">
-                  {section.items.map((item) => (
-                    <li key={item}>• {item}</li>
-                  ))}
-                </ul>
-              )}
-              {section.links && (
-                <ul className="mt-4 space-y-2 text-white/70">
-                  {section.links.map((link) => (
-                    <li key={link.label}>
-                      {link.href ? (
-                        <a
-                          href={link.href}
-                          className="underline decoration-white/30 underline-offset-4 transition hover:text-white"
-                        >
-                          {link.label}
-                        </a>
-                      ) : (
-                        <span>{link.label}</span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {section.actions && (
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {section.actions.map((action, index) => (
-                    <Button
-                      key={action.label}
-                      href={action.href}
-                      variant={action.variant ?? (index === 0 ? "primary" : "secondary")}
-                    >
-                      {action.label}
-                    </Button>
+              <h2 className="text-2xl font-semibold">{section.title}</h2>
+              {renderSectionContent(section)}
+              {section.subsections && section.subsections.length > 0 && (
+                <div className="mt-6 space-y-8">
+                  {section.subsections.map((subsection) => (
+                    <div key={subsection.id} id={subsection.id} className="scroll-mt-28">
+                      <h3 className="text-lg font-semibold text-white/90">
+                        {subsection.title}
+                      </h3>
+                      {renderSectionContent(subsection)}
+                    </div>
                   ))}
                 </div>
               )}
@@ -160,7 +178,7 @@ export default function ProgramDetail({ program }: { program: Program }) {
           ))}
         </div>
 
-        {sections.length > 0 && (
+        {navItems.length > 0 && (
           <aside className="hidden md:block">
             <div className="sticky top-28 rounded-2xl border border-white/10 bg-white/5 p-4">
               <div className="text-xs font-semibold tracking-[0.18em] text-white/60">
@@ -175,19 +193,21 @@ export default function ProgramDetail({ program }: { program: Program }) {
                       animate={{ height: `${progress}%` }}
                       transition={{ duration: 0.35, ease: "easeOut" }}
                     />
-                    {sections.map((section, index) => {
+                    {navItems.map((item, index) => {
                       const active = index <= activeIndex;
+                      const dotSize = item.depth === 0 ? "h-2.5 w-2.5" : "h-2 w-2";
                       return (
                         <button
-                          key={section.id}
+                          key={item.id}
                           type="button"
-                          onClick={() => scrollToSection(section.id)}
+                          onClick={() => scrollToSection(item.id)}
                           className="relative z-10 flex h-5 w-5 items-center justify-center"
-                          aria-label={`Jump to ${section.title}`}
+                          aria-label={`Jump to ${item.title}`}
                         >
                           <motion.span
                             className={[
-                              "h-2.5 w-2.5 rounded-full border",
+                              "rounded-full border",
+                              dotSize,
                               active
                                 ? "border-signal-cyan/80 bg-signal-cyan/70"
                                 : "border-white/25 bg-black/60",
@@ -201,18 +221,19 @@ export default function ProgramDetail({ program }: { program: Program }) {
                   </div>
                 </div>
 
-                <ul className="space-y-4 text-sm text-white/70">
-                  {sections.map((section, index) => (
-                    <li key={section.id}>
+                <ul className="space-y-3 text-sm text-white/70">
+                  {navItems.map((item, index) => (
+                    <li key={item.id}>
                       <button
                         type="button"
-                        onClick={() => scrollToSection(section.id)}
+                        onClick={() => scrollToSection(item.id)}
                         className={[
                           "text-left transition hover:text-white",
+                          item.depth === 0 ? "text-sm" : "pl-3 text-xs text-white/60",
                           index === activeIndex ? "text-white" : "",
                         ].join(" ")}
                       >
-                        {section.title}
+                        {item.title}
                       </button>
                     </li>
                   ))}

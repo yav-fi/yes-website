@@ -10,7 +10,7 @@ export default function Footer() {
             Yale Entrepreneurial Society
           </div>
           <p className="mt-2 text-sm text-white/70">
-            Built by students. Powered by builders.
+            
           </p>
           <p className="mt-4 text-xs text-white/45">
             © {new Date().getFullYear()} YES
