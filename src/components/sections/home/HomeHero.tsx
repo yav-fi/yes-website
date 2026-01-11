@@ -49,12 +49,11 @@ export default function HomeHero({ play }: { play: boolean }) {
           
 
           <motion.h1 variants={item} className="mt-7 text-balance text-5xl font-semibold tracking-tight md:text-7xl">
-            Where Yalies build what’s next.
+            We’re training the next generation of bulldog entrepreneurs.
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-xl text-lg text-white/75 md:text-xl">
-            Programs, mentorship, and events built for founders, builders, and operators —
-            designed to turn momentum into outcomes.
+            
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">

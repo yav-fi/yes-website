@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import type { Program } from "@/data/programs";
+import type { Program, ProgramSection } from "@/data/programs";
 
 function sectionId(title: string) {
   return title
@@ -12,40 +12,54 @@ function sectionId(title: string) {
     .replace(/(^-|-$)/g, "");
 }
 
-type DetailSection = {
+type DetailSection = ProgramSection & {
+  id: string;
+  extra?: string;
+  subsections?: DetailSection[];
+};
+
+type NavItem = {
   id: string;
   title: string;
-  body?: string;
-  extra?: string;
-  items?: string[];
-  links?: { label: string; href?: string }[];
-  actions?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
+  depth: number;
 };
 
 export default function ProgramDetail({ program }: { program: Program }) {
   const { scrollY } = useScroll();
   const sections = useMemo<DetailSection[]>(() => {
-    const overview = {
-      id: sectionId("Overview"),
+    const addIds = (section: ProgramSection, parentTitle?: string): DetailSection => {
+      const id = sectionId(parentTitle ? `${parentTitle}-${section.title}` : section.title);
+      const subsections = section.subsections?.map((sub) => addIds(sub, section.title));
+      return { ...section, id, subsections };
+    };
+
+    const overview: DetailSection = {
+      id: "overview",
       title: "Overview",
       body: program.description,
       extra: program.oneLiner,
     };
-    const rest =
-      program.sections?.map((section) => ({
-        ...section,
-        id: sectionId(section.title),
-      })) ?? [];
+
+    const rest = program.sections?.map((section) => addIds(section)) ?? [];
     return [overview, ...rest];
   }, [program.description, program.oneLiner, program.sections]);
+  const navItems = useMemo<NavItem[]>(() => {
+    const items: NavItem[] = [];
+    const walk = (section: DetailSection, depth: number) => {
+      items.push({ id: section.id, title: section.title, depth });
+      section.subsections?.forEach((sub) => walk(sub, depth + 1));
+    };
+    sections.forEach((section) => walk(section, 0));
+    return items;
+  }, [sections]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (!sections.length) return;
+    if (!navItems.length) return;
     const offset = 140;
     let currentIndex = 0;
-    sections.forEach((section, index) => {
-      const el = document.getElementById(section.id);
+    navItems.forEach((item, index) => {
+      const el = document.getElementById(item.id);
       if (!el) return;
       const top = el.getBoundingClientRect().top - offset;
       if (top <= 0) currentIndex = index;
@@ -55,8 +69,8 @@ export default function ProgramDetail({ program }: { program: Program }) {
   });
 
   const progress =
-    sections.length > 1
-      ? Math.min(100, (activeIndex / (sections.length - 1)) * 100)
+    navItems.length > 1
+      ? Math.min(100, (activeIndex / (navItems.length - 1)) * 100)
       : 0;
 
   const scrollToSection = (id: string) => {
