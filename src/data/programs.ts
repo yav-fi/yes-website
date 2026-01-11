@@ -39,7 +39,7 @@ export const programs: Program[] = [
       {
         label: "Application for Yale students",
         href: "https://forms.gle/UauNG18MQ3u387WVA",
-        variant: "secondary",
+        variant: "primary",
       },
 
     ],
