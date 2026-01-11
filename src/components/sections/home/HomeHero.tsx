@@ -3,14 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import Container from "@/components/ui/Container";
-import Chip from "@/components/ui/Chip";
 import { Button } from "@/components/ui/Button";
-
-const stats = [
-  { label: "Members", value: "450+" },
-  { label: "Events / year", value: "60+" },
-  { label: "Builder energy", value: "∞" },
-];
 
 const heroEase = [0.16, 1, 0.3, 1] as const;
 const heroImageEase = [0.22, 1, 0.36, 1] as const;
@@ -65,24 +58,9 @@ export default function HomeHero({ play }: { play: boolean }) {
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">
-            <Button href="/join" variant="primary">
-              Join YES
-            </Button>
             <Button href="/programs" variant="secondary">
               Explore Programs
             </Button>
-          </motion.div>
-
-          <motion.div
-            variants={item}
-            className="mt-12 flex flex-wrap gap-8 text-sm text-white/70"
-          >
-            {stats.map((stat) => (
-              <div key={stat.label} className="space-y-1">
-                <div className="text-lg font-semibold text-white">{stat.value}</div>
-                <div>{stat.label}</div>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
 

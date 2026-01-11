@@ -1,3 +1,12 @@
+export type ProgramSection = {
+  title: string;
+  body?: string;
+  items?: string[];
+  links?: { label: string; href?: string }[];
+  actions?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
+  subsections?: ProgramSection[];
+};
+
 export type Program = {
   slug: string;
   name: string;
@@ -5,13 +14,7 @@ export type Program = {
   description: string;
   cardCtaLabel?: string;
   ctas?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
-  sections?: {
-    title: string;
-    body?: string;
-    items?: string[];
-    links?: { label: string; href?: string }[];
-    actions?: { label: string; href: string; variant?: "primary" | "secondary" | "ghost" }[];
-  }[];
+  sections?: ProgramSection[];
 };
 
 export const programs: Program[] = [
@@ -20,7 +23,7 @@ export const programs: Program[] = [
     name: "YES High School Fellowship",
     oneLiner: "Begin your entrepreneurial journey today!",
     description:
-      "An 8-week program designed to give aspiring high school entrepreneurs the tools, mindset, and community to build a startup idea from scratch (or level up one they already have).",
+      "An 8-week program designed to give aspiring high school entrepreneurs the tools, mindset, and community to build a startup idea from scratch (or level up one they already have). You'll learn directly from Yale School of Management guest speakers, Yale undergraduate entrepreneurs, and experienced mentors while collaborating with ambitious students from around the world.",
     cardCtaLabel: "Apply",
     ctas: [
       {
@@ -36,13 +39,8 @@ export const programs: Program[] = [
     ],
     sections: [
       {
-        title: "About the Fellowship",
-        body:
-          "You will learn directly from Yale School of Management guest speakers, Yale undergraduate entrepreneurs, and experienced mentors while collaborating with ambitious students from around the world.",
-      },
-      {
-        title: "Are you a high school student?",
-        body: "Become a YES High School Fellow.",
+        title: "High school students",
+        body: "Are you a high school student? Become a YES High School Fellow.",
         actions: [
           {
             label: "Apply",
@@ -55,99 +53,115 @@ export const programs: Program[] = [
             variant: "secondary",
           },
         ],
-      },
-      {
-        title: "What you'll gain",
-        items: [
-          "Learn from Yale School of Management professors and Yale undergraduate entrepreneurs",
-          "Understand the skills and mindset needed to succeed in startups",
-          "Build and present a full startup pitch deck",
-          "Learn about the Yale Entrepreneurial Society and entrepreneurship culture at Yale",
-          "Join a network of like-minded high school and college innovators globally",
-        ],
-      },
-      {
-        title: "Program dates",
-        body: "All sessions begin at 11:00 A.M. EST.",
-        items: [
-          "February 7, 2026",
-          "February 14, 2026",
-          "February 21, 2026",
-          "February 28, 2026",
-          "March 7, 2026 (Masterclass)",
-          "March 14, 2026 (Masterclass)",
-          "March 28, 2026",
-          "April 11, 2026 (Pitch Day / Finals)",
-        ],
-      },
-      {
-        title: "Pitch Day",
-        body: "Pitch your idea to a panel of:",
-        items: [
-          "Yale School of Management entrepreneurship experts",
-          "Serial entrepreneurs",
-          "Startup operators and mentors",
-        ],
-      },
-      {
-        title: "Who you are",
-        items: [
-          "A motivated high school student excited about entrepreneurship",
-          "A problem solver who loves thinking outside the box",
-          "A team player ready to collaborate and grow alongside others",
-        ],
-      },
-      {
-        title: "Cost",
-        items: [
-          "Full program cost for one 8-week session: $400",
-          "YES offers need-based financial aid that can cover the full cost for domestic and international students",
-        ],
-      },
-      {
-        title: "Apply",
-        body: "Applications for the Spring 2026 cohort are now open!",
-        actions: [
+        subsections: [
           {
-            label: "Apply",
-            href: "https://forms.gle/VSN1KPsPi5Gzben88",
-            variant: "primary",
+            title: "What you'll gain",
+            items: [
+              "Learn from Yale School of Management professors and Yale undergraduate entrepreneurs",
+              "Understand the skills and mindset needed to succeed in startups",
+              "Build and present a full startup pitch deck",
+              "Learn about the Yale Entrepreneurial Society and entrepreneurship culture at Yale",
+              "Join a network of like-minded high school and college innovators globally",
+            ],
           },
           {
-            label: "Alternate application",
-            href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
-            variant: "secondary",
+            title: "Who you are",
+            items: [
+              "A motivated high school student excited about entrepreneurship",
+              "A problem solver who loves thinking outside the box",
+              "A team player ready to collaborate and grow alongside others",
+            ],
+          },
+          {
+            title: "Apply",
+            body: "Applications for the Spring 2026 cohort are now open!",
+            actions: [
+              {
+                label: "Apply",
+                href: "https://forms.gle/VSN1KPsPi5Gzben88",
+                variant: "primary",
+              },
+              {
+                label: "Alternate application",
+                href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
+                variant: "secondary",
+              },
+            ],
           },
         ],
       },
       {
-        title: "Are you a Yale student?",
-        body: "Join the YES HS Fellowship Operations Team.",
-      },
-      {
-        title: "What you'll do",
-        items: [
-          "Help develop a fun, engaging curriculum",
-          "Teach a session (or lead a cohort of 10-15 fellows)",
-          "Get priority access to other YES events and opportunities",
-        ],
-      },
-      {
-        title: "Who you are (Yale team)",
-        items: [
-          "A Yale student with an interest in startups (experience helpful, not required)",
-          "A leader excited to help younger students begin building",
-          "Fun, social, and wants to be part of YES's community",
-        ],
-      },
-      {
-        title: "Apply to join the HS Fellowship Team",
-        body: "Applications to join the HS Fellowship Team for Spring 2026 are open.",
+        title: "Yale students",
+        body: "Are you a Yale student? Join the YES HS Fellowship Operations Team.",
         actions: [
           {
             label: "Apply to the operations team",
             href: "https://forms.gle/UauNG18MQ3u387WVA",
             variant: "primary",
+          },
+        ],
+        subsections: [
+          {
+            title: "What you'll do",
+            items: [
+              "Help develop a fun, engaging curriculum",
+              "Teach a session (or lead a cohort of 10-15 fellows)",
+              "Get priority access to other YES events and opportunities",
+            ],
+          },
+          {
+            title: "Who you are",
+            items: [
+              "A Yale student with an interest in startups (experience helpful, not required)",
+              "A leader excited to help younger students begin building",
+              "Fun, social, and wants to be part of YES's community",
+            ],
+          },
+          {
+            title: "Apply",
+            body: "Applications to join the HS Fellowship Team for Spring 2026 are open.",
+            actions: [
+              {
+                label: "Apply to the operations team",
+                href: "https://forms.gle/UauNG18MQ3u387WVA",
+                variant: "primary",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "Program details",
+        subsections: [
+          {
+            title: "Program dates",
+            body: "All sessions begin at 11:00 A.M. EST.",
+            items: [
+              "February 7, 2026",
+              "February 14, 2026",
+              "February 21, 2026",
+              "February 28, 2026",
+              "March 7, 2026 (Masterclass)",
+              "March 14, 2026 (Masterclass)",
+              "March 28, 2026",
+              "April 11, 2026 (Pitch Day / Finals)",
+            ],
+          },
+          {
+            title: "Pitch Day",
+            body: "Pitch your idea to a panel of:",
+            items: [
+              "Yale School of Management entrepreneurship experts",
+              "Serial entrepreneurs",
+              "Startup operators and mentors",
+            ],
+          },
+          {
+            title: "Cost",
+            items: [
+              "Full program cost for one 8-week session: $400",
+              "YES offers need-based financial aid that can cover the full cost for domestic and international students",
+            ],
           },
         ],
       },
