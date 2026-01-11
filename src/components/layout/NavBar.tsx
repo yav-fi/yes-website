@@ -108,7 +108,7 @@ export default function NavBar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-[60] bg-background/95 backdrop-blur-md md:hidden"
+            className="fixed inset-0 z-[60] bg-black md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -141,26 +141,26 @@ export default function NavBar() {
               </div>
 
               <div className="flex flex-1 flex-col px-6 pb-10">
-                <div className="flex flex-1 flex-col justify-center">
-                  <div className="flex flex-1 flex-col justify-between py-6 text-2xl font-semibold">
-                  {links.map((l) => (
-                    <NavLink
-                      key={l.href}
-                      href={l.href}
-                      label={l.label}
-                      active={pathname === l.href || pathname.startsWith(l.href)}
-                      onClick={() => setOpen(false)}
-                      className="text-2xl"
-                    />
-                  ))}
+                <div className="flex flex-1 flex-col items-center">
+                  <div className="flex w-full max-w-xs flex-1 flex-col items-center justify-evenly py-6 text-2xl font-semibold text-center">
+                    {links.map((l) => (
+                      <NavLink
+                        key={l.href}
+                        href={l.href}
+                        label={l.label}
+                        active={pathname === l.href || pathname.startsWith(l.href)}
+                        onClick={() => setOpen(false)}
+                        className="w-full text-2xl text-center"
+                      />
+                    ))}
 
-                  <Link
-                    href="/join"
-                    onClick={() => setOpen(false)}
-                    className="mt-2 inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
-                  >
-                    Join
-                  </Link>
+                    <Link
+                      href="/join"
+                      onClick={() => setOpen(false)}
+                      className="mt-2 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition border border-signal-cyan/40 bg-signal-cyan/10 hover:bg-signal-cyan/20"
+                    >
+                      Join
+                    </Link>
                   </div>
                 </div>
               </div>
