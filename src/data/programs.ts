@@ -100,7 +100,7 @@ export const programs: Program[] = [
         body: "Are you a Yale student? Join the YES HS Fellowship Operations Team.",
         actions: [
           {
-            label: "Apply to the operations team",
+            label: "Yale Mentors Application",
             href: "https://forms.gle/UauNG18MQ3u387WVA",
             variant: "primary",
           },
