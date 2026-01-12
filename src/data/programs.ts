@@ -49,12 +49,12 @@ export const programs: Program[] = [
         body: "Are you a high school student? Become a YES High School Fellow.",
         actions: [
           {
-            label: "Apply",
+            label: "General Application",
             href: "https://forms.gle/VSN1KPsPi5Gzben88",
             variant: "primary",
           },
        {
-        label: "Apply for financial aid",
+        label: "Financial Aid",
         href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
         variant: "secondary",
       },
@@ -71,25 +71,10 @@ export const programs: Program[] = [
             ],
           },
           {
-            title: "Who you are",
-            items: [
-              "A motivated high school student excited about entrepreneurship",
-              "A problem solver who loves thinking outside the box",
-              "A team player ready to collaborate and grow alongside others",
-            ],
-          },
-          {
             title: "Program dates",
             body: "All sessions begin at 11:00 A.M. EST.",
             items: [
-              "February 7, 2026",
-              "February 14, 2026",
-              "February 21, 2026",
-              "February 28, 2026",
-              "March 7, 2026 (Masterclass)",
-              "March 14, 2026 (Masterclass)",
-              "March 28, 2026",
-              "April 11, 2026 (Pitch Day / Finals)",
+              "February 7 - April 11, 2026",
             ],
           },
           {
@@ -108,22 +93,6 @@ export const programs: Program[] = [
               "YES offers need-based financial aid that can cover the full cost for domestic and international students",
             ],
           },
-          {
-            title: "Apply",
-            body: "Applications for the Spring 2026 cohort are now open!",
-            actions: [
-              {
-                label: "Apply",
-                href: "https://forms.gle/VSN1KPsPi5Gzben88",
-                variant: "primary",
-              },
-     {
-        label: "Apply for financial aid",
-        href: "https://forms.gle/QRuvaxxPZGRmRkJL8",
-        variant: "secondary",
-      },
-            ],
-          },
         ],
       },
       {
@@ -140,28 +109,9 @@ export const programs: Program[] = [
           {
             title: "What you'll do",
             items: [
-              "Help develop a fun, engaging curriculum",
-              "Teach a session (or lead a cohort of 10-15 fellows)",
-              "Get priority access to other YES events and opportunities",
-            ],
-          },
-          {
-            title: "Who you are",
-            items: [
-              "A Yale student with an interest in startups (experience helpful, not required)",
-              "A leader excited to help younger students begin building",
-              "Fun, social, and wants to be part of YES's community",
-            ],
-          },
-          {
-            title: "Apply",
-            body: "Applications to join the HS Fellowship Team for Spring 2026 are open.",
-            actions: [
-              {
-                label: "Apply to the operations team",
-                href: "https://forms.gle/UauNG18MQ3u387WVA",
-                variant: "primary",
-              },
+              "Help develop an engaging curriculum to teach high school entrepreneurs",
+              "Mentor a cohort of 10-15 high school fellows",
+              "Gain leadership skills for your resume",
             ],
           },
         ],
