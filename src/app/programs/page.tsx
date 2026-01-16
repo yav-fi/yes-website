@@ -10,8 +10,8 @@ export default function ProgramsPage() {
         <Reveal>
           <SectionHeading
             eyebrow="Programs"
-            title="Programs for every kind of builder."
-            desc="Fellowships, dinners, and a hacker house for builders who want to ship."
+            title="Programs for every stage."
+            desc=""
           />
         </Reveal>
         <Reveal delay={0.08}>
