@@ -19,6 +19,74 @@ export type Program = {
 
 export const programs: Program[] = [
   {
+    slug: "launch-camp-yale",
+    name: "LAUNCH",
+    oneLiner:
+      "Camp Yale First-Year Pre-orientation Program focused on impact and entrepreneurship",
+    description:
+      "LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt.",
+    sections: [
+      {
+        title: "For Pre-frosh",
+        body:
+          "What is Launch? Why launch? tldr: LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt. LAUNCH is for everyone who wants to change the world – through arts, startups, non-profits, or social impact organizations. No prior entrepreneurial experience is required, only a desire to make a difference, grow and get involved with some of Yale’s coolest people. See you in August!",
+      },
+      {
+        title: "For Student Leaders",
+        body: "Helping to mold the next generation of yale entrepreneurs.",
+        subsections: [
+          {
+            title: "What is LAUNCH?",
+            body:
+              "After a hype first summer, LAUNCH is back for its second iteration! LAUNCH is a Camp Yale Program focused on helping incoming students develop the skills for successful innovation and entrepreneurship. Now, we're hiring student leaders to help run it! LAUNCH programming will include collaborative workshops, exciting alumni speakers, and bonding activities. Last year, LAUNCH featured Max Mullen of Instacart, Michael Seibel of Twitch and YCombinator, Anne Wojcicki of 23andMe, and many others! Students will explore all of the resources available to them at Yale, such as the Tsai Center for Innovative Thinking at Yale (Tsai CITY) and the Center for Engineering Innovation and Design (CEID). You'll help new first-year students discover ways in which they can be disruptive, change-making, and innovative, all while building a more inclusive entrepreneurial community.",
+          },
+          {
+            title: "Responsibilities",
+            items: [
+              "Attend a few mandatory training sessions",
+              "Guide first-years through LAUNCH curriculum",
+              "Lead student bonding activities",
+              "Share meals and attend exclusive speaker events",
+              "Get students excited about entrepreneurship @ Yale!",
+            ],
+          },
+          {
+            title: "Compensation",
+            body:
+              "All student leaders will be paid a stipend and have room and board covered from the time they arrive for training until the residences open.",
+          },
+          {
+            title: "LAUNCH Program Goals",
+            items: [
+              "1. Comfort: Ensure that incoming students feel Yale is a safe and welcoming environment by helping them learn the campus and make a few friends!",
+              "2. Exploration: Expose Yale students to all the resources available to them, as well as how they can get involved in the entrepreneurial ecosystem.",
+              "3. DEI: Help inspire students to create a more diverse and inclusive entrepreneurial community.",
+            ],
+          },
+          {
+            title: "Key Dates (Fall 2026)",
+            items: [
+              "Around August 12-16: Move in",
+              "Around August 17: Training",
+              "Around August 18: First-year move in",
+              "Around August 19-21: First-year general orientation",
+              "Around August 21-25: Orientation programs run",
+            ],
+          },
+          {
+            title: "Availability",
+            body: "ALL COUNSELORS MUST BE AVAILABLE AUGUST 16-25.",
+          },
+          {
+            title: "Application deadline",
+            body:
+              "The application deadline for Summer 2026 is Sunday, February 18th, 2026 at 11:59pm!",
+          },
+        ],
+      },
+    ],
+  },
+  {
     slug: "high-school-fellowship",
     name: "YES High School Fellowship",
     oneLiner: "Begin your entrepreneurial journey today!",
@@ -115,6 +183,65 @@ export const programs: Program[] = [
             ],
           },
         ],
+      },
+    ],
+  },
+  {
+    slug: "yale-inspire",
+    name: "Yale INSPIRE",
+    oneLiner: "Innovation Series Promoting Inspiration, Research, and Entrepreneurship",
+    description:
+      "Yale INSPIRE is a partnership between the Yale Entrepreneurial Society and the Tsai Center for Innovative Thinking at Yale, dedicated to hosting esteemed founders and entrepreneurially-minded speakers from diverse industries and backgrounds and fostering a culture of innovation on campus.",
+    sections: [
+      {
+        title: "Featured speakers",
+        items: [
+          "Linda Rottenberg — Founder, Endeavor (April 2024)",
+          "Joe Tsai — Founder, Alibaba",
+          "Jenny Fleiss — Founder, Rent the Runway (February 2024)",
+          "Kevin Ryan — Founder, DoubleClick, MongoDB, Business Insider",
+          "Jason Chen — Partner, Contrary",
+          "Mariam Naficy — Founder, Minted",
+          "Gary Stewart — Managing Director, Techstars NYC",
+          "Sara Du — Co-Founder & CEO, Alloy Automation",
+          "Michael Redd — Co-Founder, 22 Ventures | NBA Player",
+          "Max Mullen — Co-Founder, Instacart",
+          "Anne Wojcicki — Founder, 23andMe",
+          "Michael Seibel — Co-Founder, Twitch | Partner, YCombinator",
+        ],
+      },
+      {
+        title: "Previous guests",
+        body:
+          "Below are a few amazing founders, venture capitalists, and journalists who have previously offered advice, mentorship, and/or inspiration to yalies through speaking events, dinners, LAUNCH programming, and our podcast:",
+        items: [
+          "April Koh — Co-Founder & CEO, Spring Health",
+          "Tom Lehman — Founder & CEO, Genius",
+          "Rob Chesnut — General Counsel, Chief Ethics Officer, Airbnb",
+          "Gina Yoo — Head of Ventures, Entrepreneur First",
+          "Laila Maidan — Investing Correspondent, Business Insider",
+          "Priyanka Srinivas — Founder & CEO, The Live Green Co",
+          "Issam Freiha — Co-Founder & CEO, Blank Street Coffee",
+          "Sander Daniels — Founder, Thumbtack",
+          "Jenny Fleiss — Co-Founder, Rent the Runway",
+          "Emmett Shear — Co-Founder, Twitch",
+          "Shernaz Daver — CMO, Udacity | Operating Partner, Khosla Ventures",
+          "Donna Dubinsky — CEO, Palm Inc | Co-Founder, Handspring",
+          "Jonathan Greechan — Co-Founder & CEO, Founder Institute",
+          "Mike Hoey — Founder, Source Meridian",
+          "Kevin Tan — Founder, Snackpass",
+          "Alexandra Levine — Senior Writer, Forbes Magazine",
+          "Ann Miura-Ko — Co-Founder & Partner, Floodgate",
+          "Domm Holland — Former CEO, Fast",
+          "Samantha Stokes — VC & Startups Reporter, Business Insider",
+          "Craig Corbett — Co-Founder & Partner, Publicize",
+          "Dan Berger — Founder, Neon Coat",
+        ],
+      },
+      {
+        title: "Speaker inquiries",
+        body: "Interested in speaking to yale entrepreneurs? email seth.goldin@yale.edu",
+        links: [{ label: "seth.goldin@yale.edu", href: "mailto:seth.goldin@yale.edu" }],
       },
     ],
   },
