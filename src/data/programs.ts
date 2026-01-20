@@ -19,74 +19,6 @@ export type Program = {
 
 export const programs: Program[] = [
   {
-    slug: "launch-camp-yale",
-    name: "LAUNCH",
-    oneLiner:
-      "Camp Yale First-Year Pre-orientation Program focused on impact and entrepreneurship",
-    description:
-      "LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt.",
-    sections: [
-      {
-        title: "For Pre-frosh",
-        body:
-          "What is Launch? Why launch? tldr: LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt. LAUNCH is for everyone who wants to change the world – through arts, startups, non-profits, or social impact organizations. No prior entrepreneurial experience is required, only a desire to make a difference, grow and get involved with some of Yale’s coolest people. See you in August!",
-      },
-      {
-        title: "For Student Leaders",
-        body: "Helping to mold the next generation of yale entrepreneurs.",
-        subsections: [
-          {
-            title: "What is LAUNCH?",
-            body:
-              "After a hype first summer, LAUNCH is back for its second iteration! LAUNCH is a Camp Yale Program focused on helping incoming students develop the skills for successful innovation and entrepreneurship. Now, we're hiring student leaders to help run it! LAUNCH programming will include collaborative workshops, exciting alumni speakers, and bonding activities. Last year, LAUNCH featured Max Mullen of Instacart, Michael Seibel of Twitch and YCombinator, Anne Wojcicki of 23andMe, and many others! Students will explore all of the resources available to them at Yale, such as the Tsai Center for Innovative Thinking at Yale (Tsai CITY) and the Center for Engineering Innovation and Design (CEID). You'll help new first-year students discover ways in which they can be disruptive, change-making, and innovative, all while building a more inclusive entrepreneurial community.",
-          },
-          {
-            title: "Responsibilities",
-            items: [
-              "Attend a few mandatory training sessions",
-              "Guide first-years through LAUNCH curriculum",
-              "Lead student bonding activities",
-              "Share meals and attend exclusive speaker events",
-              "Get students excited about entrepreneurship @ Yale!",
-            ],
-          },
-          {
-            title: "Compensation",
-            body:
-              "All student leaders will be paid a stipend and have room and board covered from the time they arrive for training until the residences open.",
-          },
-          {
-            title: "LAUNCH Program Goals",
-            items: [
-              "1. Comfort: Ensure that incoming students feel Yale is a safe and welcoming environment by helping them learn the campus and make a few friends!",
-              "2. Exploration: Expose Yale students to all the resources available to them, as well as how they can get involved in the entrepreneurial ecosystem.",
-              "3. DEI: Help inspire students to create a more diverse and inclusive entrepreneurial community.",
-            ],
-          },
-          {
-            title: "Key Dates (Fall 2026)",
-            items: [
-              "Around August 12-16: Move in",
-              "Around August 17: Training",
-              "Around August 18: First-year move in",
-              "Around August 19-21: First-year general orientation",
-              "Around August 21-25: Orientation programs run",
-            ],
-          },
-          {
-            title: "Availability",
-            body: "ALL COUNSELORS MUST BE AVAILABLE AUGUST 16-25.",
-          },
-          {
-            title: "Application deadline",
-            body:
-              "The application deadline for Summer 2026 is Sunday, February 18th, 2026 at 11:59pm!",
-          },
-        ],
-      },
-    ],
-  },
-  {
     slug: "high-school-fellowship",
     name: "YES High School Fellowship",
     oneLiner: "Begin your entrepreneurial journey today!",
@@ -181,6 +113,74 @@ export const programs: Program[] = [
               "Mentor a cohort of 10-15 high school fellows",
               "Gain leadership skills for your resume",
             ],
+          },
+        ],
+      },
+    ],
+  },
+    {
+    slug: "launch-camp-yale",
+    name: "LAUNCH",
+    oneLiner:
+      "Camp Yale First-Year Pre-orientation Program focused on impact and entrepreneurship",
+    description:
+      "LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt.",
+    sections: [
+      {
+        title: "For Pre-frosh",
+        body:
+          "What is Launch? Why launch? tldr: LAUNCH is focused on helping incoming students make the biggest impact with their lives through entrepreneurship. At LAUNCH, you will hear from legendary founders, meet the alums and students who've built Yale's entrepreneurship community, and engage in collaborative workshops at Yale's Tsai CITY and entrepreneurial hubs around New Haven. But, this isn’t just entrepreneurship; during LAUNCH, you’ll find your peers on a day hike and beach trip, enjoy movie night at the Beinecke, and get to know campus through a late-night scavenger hunt. LAUNCH is for everyone who wants to change the world – through arts, startups, non-profits, or social impact organizations. No prior entrepreneurial experience is required, only a desire to make a difference, grow and get involved with some of Yale’s coolest people. See you in August!",
+      },
+      {
+        title: "For Student Leaders",
+        body: "Helping to mold the next generation of yale entrepreneurs.",
+        subsections: [
+          {
+            title: "What is LAUNCH?",
+            body:
+              "After a hype first summer, LAUNCH is back for its second iteration! LAUNCH is a Camp Yale Program focused on helping incoming students develop the skills for successful innovation and entrepreneurship. Now, we're hiring student leaders to help run it! LAUNCH programming will include collaborative workshops, exciting alumni speakers, and bonding activities. Last year, LAUNCH featured Max Mullen of Instacart, Michael Seibel of Twitch and YCombinator, Anne Wojcicki of 23andMe, and many others! Students will explore all of the resources available to them at Yale, such as the Tsai Center for Innovative Thinking at Yale (Tsai CITY) and the Center for Engineering Innovation and Design (CEID). You'll help new first-year students discover ways in which they can be disruptive, change-making, and innovative, all while building a more inclusive entrepreneurial community.",
+          },
+          {
+            title: "Responsibilities",
+            items: [
+              "Attend a few mandatory training sessions",
+              "Guide first-years through LAUNCH curriculum",
+              "Lead student bonding activities",
+              "Share meals and attend exclusive speaker events",
+              "Get students excited about entrepreneurship @ Yale!",
+            ],
+          },
+          {
+            title: "Compensation",
+            body:
+              "All student leaders will be paid a stipend and have room and board covered from the time they arrive for training until the residences open.",
+          },
+          {
+            title: "LAUNCH Program Goals",
+            items: [
+              "1. Comfort: Ensure that incoming students feel Yale is a safe and welcoming environment by helping them learn the campus and make a few friends!",
+              "2. Exploration: Expose Yale students to all the resources available to them, as well as how they can get involved in the entrepreneurial ecosystem.",
+              "3. DEI: Help inspire students to create a more diverse and inclusive entrepreneurial community.",
+            ],
+          },
+          {
+            title: "Key Dates (Fall 2026)",
+            items: [
+              "Around August 12-16: Move in",
+              "Around August 17: Training",
+              "Around August 18: First-year move in",
+              "Around August 19-21: First-year general orientation",
+              "Around August 21-25: Orientation programs run",
+            ],
+          },
+          {
+            title: "Availability",
+            body: "The availability all counselors must have hasn't been announced yet.",
+          },
+          {
+            title: "Application deadline",
+            body:
+              "The application deadline for Summer 2026 has not been announced yet.",
           },
         ],
       },

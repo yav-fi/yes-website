@@ -7,11 +7,16 @@ export default function Reveal({
   children,
   delay = 0,
   y = 16,
+  immediate = false,
 }: {
   children: React.ReactNode;
   delay?: number;
   y?: number;
+  immediate?: boolean;
 }) {
+  if (immediate) {
+    return <div>{children}</div>;
+  }
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 

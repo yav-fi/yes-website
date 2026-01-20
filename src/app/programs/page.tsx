@@ -7,14 +7,14 @@ export default function ProgramsPage() {
   return (
     <section className="py-16">
       <Container>
-        <Reveal>
+        <Reveal immediate>
           <SectionHeading
             eyebrow="Programs"
             title="Programs for every stage."
             desc=""
           />
         </Reveal>
-        <Reveal delay={0.08}>
+        <Reveal immediate>
           <ProgramsGrid />
         </Reveal>
       </Container>
