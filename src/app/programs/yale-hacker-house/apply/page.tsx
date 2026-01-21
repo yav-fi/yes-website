@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import Container from "@/components/ui/Container";
 
 const WORD_TARGETS = {
-  build: 50,
-  why: 100,
+  long: 100,
+  short: 50,
 };
 
 function countWords(value: string) {
@@ -16,11 +16,31 @@ function countWords(value: string) {
 }
 
 export default function YaleHackerHouseApplyPage() {
-  const [buildResponse, setBuildResponse] = useState("");
-  const [whyResponse, setWhyResponse] = useState("");
+  const [problemResponse, setProblemResponse] = useState("");
+  const [interestingResponse, setInterestingResponse] = useState("");
+  const [progressResponse, setProgressResponse] = useState("");
+  const [builderResponse, setBuilderResponse] = useState("");
+  const [helpResponse, setHelpResponse] = useState("");
+  const [extraResponse, setExtraResponse] = useState("");
 
-  const buildWordCount = useMemo(() => countWords(buildResponse), [buildResponse]);
-  const whyWordCount = useMemo(() => countWords(whyResponse), [whyResponse]);
+  const problemWordCount = useMemo(
+    () => countWords(problemResponse),
+    [problemResponse]
+  );
+  const interestingWordCount = useMemo(
+    () => countWords(interestingResponse),
+    [interestingResponse]
+  );
+  const progressWordCount = useMemo(
+    () => countWords(progressResponse),
+    [progressResponse]
+  );
+  const builderWordCount = useMemo(
+    () => countWords(builderResponse),
+    [builderResponse]
+  );
+  const helpWordCount = useMemo(() => countWords(helpResponse), [helpResponse]);
+  const extraWordCount = useMemo(() => countWords(extraResponse), [extraResponse]);
 
   return (
     <section className="py-16">
@@ -62,209 +82,216 @@ export default function YaleHackerHouseApplyPage() {
             </label>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Email *</span>
-              <input
-                required
-                type="email"
-                name="email"
-                autoComplete="email"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="jane@college.edu"
-              />
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Phone number *</span>
-              <input
-                required
-                type="tel"
-                name="phone"
-                autoComplete="tel"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="+1 (555) 555-5555"
-              />
-            </label>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Yale affiliation *</span>
-              <select
-                required
-                name="affiliation"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-              >
-                <option className="bg-black" value="">
-                  Select one
-                </option>
-                <option className="bg-black" value="yale-college">
-                  Yale College
-                </option>
-                <option className="bg-black" value="graduate">
-                  Graduate/Professional School
-                </option>
-                <option className="bg-black" value="alumni">
-                  Alumni
-                </option>
-                <option className="bg-black" value="other">
-                  Other Yale affiliation
-                </option>
-              </select>
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Graduation year *</span>
-              <input
-                required
-                type="number"
-                name="gradYear"
-                min="2025"
-                max="2032"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="2027"
-              />
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Major / department *</span>
-              <input
-                required
-                name="major"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Computer Science"
-              />
-            </label>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Current location *</span>
-              <input
-                required
-                name="location"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="New Haven, CT"
-              />
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Technical focus *</span>
-              <input
-                required
-                name="technicalFocus"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="AI/ML, full-stack, systems, etc."
-              />
-            </label>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Project / company name *</span>
-              <input
-                required
-                name="projectName"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Project Atlas"
-              />
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">Co-founders / team *</span>
-              <input
-                required
-                name="team"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Names, roles, and affiliations"
-              />
-            </label>
-          </div>
-
           <label className="block space-y-2 text-sm text-white/80">
-            <span className="font-semibold">Are you building full-time this summer? *</span>
-            <select
-              required
-              name="fullTime"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-            >
-              <option className="bg-black" value="">
-                Select one
-              </option>
-              <option className="bg-black" value="yes">
-                Yes, full-time
-              </option>
-              <option className="bg-black" value="part-time">
-                Part-time
-              </option>
-              <option className="bg-black" value="not-sure">
-                Not sure yet
-              </option>
-            </select>
-          </label>
-
-          <label className="block space-y-2 text-sm text-white/80">
-            <span className="font-semibold">What are you building? *</span>
-            <textarea
-              required
-              name="buildDescription"
-              rows={4}
-              value={buildResponse}
-              onChange={(event) => setBuildResponse(event.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-              placeholder="Describe the product, who it serves, and the current stage."
-            />
-            <div className="flex flex-wrap justify-between text-xs text-white/60">
-              <span>Aim for ~{WORD_TARGETS.build} words.</span>
-              <span>{buildWordCount} words</span>
-            </div>
-          </label>
-
-          <label className="block space-y-2 text-sm text-white/80">
-            <span className="font-semibold">Why is Yale Hacker House the right fit? *</span>
-            <textarea
-              required
-              name="whyHackerHouse"
-              rows={5}
-              value={whyResponse}
-              onChange={(event) => setWhyResponse(event.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-              placeholder="Share what you hope to gain, mentors you want to meet, and what you will contribute."
-            />
-            <div className="flex flex-wrap justify-between text-xs text-white/60">
-              <span>Aim for ~{WORD_TARGETS.why} words.</span>
-              <span>{whyWordCount} words</span>
-            </div>
-          </label>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">LinkedIn URL *</span>
-              <input
-                required
-                type="url"
-                name="linkedin"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="https://linkedin.com/in/username"
-              />
-            </label>
-            <label className="space-y-2 text-sm text-white/80">
-              <span className="font-semibold">GitHub / portfolio URL *</span>
-              <input
-                required
-                type="url"
-                name="github"
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="https://github.com/username"
-              />
-            </label>
-          </div>
-
-          <label className="block space-y-2 text-sm text-white/80">
-            <span className="font-semibold">Resume / deck URL *</span>
+            <span className="font-semibold">Email *</span>
             <input
               required
-              type="url"
-              name="resume"
+              type="email"
+              name="email"
+              autoComplete="email"
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-              placeholder="Link to Google Drive, Notion, or PDF"
+              placeholder="jane@college.edu"
             />
+          </label>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              What problem are you obsessed with and why are you the best person to solve
+              it? *
+            </span>
+            <textarea
+              required
+              name="problem"
+              rows={5}
+              value={problemResponse}
+              onChange={(event) => setProblemResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Share the problem and why you are uniquely positioned to solve it."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Aim for ~{WORD_TARGETS.long} words.</span>
+              <span>{problemWordCount} words</span>
+            </div>
+          </label>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              What’s the most interesting thing you’ve built? *
+            </span>
+            <textarea
+              required
+              name="interestingBuild"
+              rows={5}
+              value={interestingResponse}
+              onChange={(event) => setInterestingResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Highlight what you built, your role, and the impact."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Aim for ~{WORD_TARGETS.long} words.</span>
+              <span>{interestingWordCount} words</span>
+            </div>
+          </label>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              What concrete progress have you made in the last 3 months? *
+            </span>
+            <textarea
+              required
+              name="progress"
+              rows={4}
+              value={progressResponse}
+              onChange={(event) => setProgressResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Share tangible milestones, product updates, or traction."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Aim for ~{WORD_TARGETS.short} words.</span>
+              <span>{progressWordCount} words</span>
+            </div>
+          </label>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              Where do you want to be as a builder 12 months from now? *
+            </span>
+            <textarea
+              required
+              name="builderVision"
+              rows={4}
+              value={builderResponse}
+              onChange={(event) => setBuilderResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Describe the future you want to build toward."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Aim for ~{WORD_TARGETS.short} words.</span>
+              <span>{builderWordCount} words</span>
+            </div>
+          </label>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              What would be most helpful to you right now as a builder? *
+            </span>
+            <textarea
+              required
+              name="helpful"
+              rows={4}
+              value={helpResponse}
+              onChange={(event) => setHelpResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Share the support, resources, or connections you need most."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Aim for ~{WORD_TARGETS.short} words.</span>
+              <span>{helpWordCount} words</span>
+            </div>
+          </label>
+
+          <fieldset className="space-y-3 text-sm text-white/80">
+            <legend className="font-semibold">
+              Are you fully committed to building full-time this summer for 10 weeks? *
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {["YES", "NO"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    required
+                    type="radio"
+                    name="fullTimeCommitment"
+                    value={option}
+                    className="h-4 w-4 accent-signal-cyan"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset className="space-y-3 text-sm text-white/80">
+            <legend className="font-semibold">
+              If accepted, are you 100% committed to joining the house? *
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {["YES", "NO"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    required
+                    type="radio"
+                    name="houseCommitment"
+                    value={option}
+                    className="h-4 w-4 accent-signal-cyan"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset className="space-y-3 text-sm text-white/80">
+            <legend className="font-semibold">
+              Do you hope to take time off (e.g., 1-2 semesters) or drop out? (Does not
+              impact your acceptance) *
+            </legend>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {["YES", "NO"].map((option) => (
+                <label key={option} className="flex items-center gap-2">
+                  <input
+                    required
+                    type="radio"
+                    name="timeOff"
+                    value={option}
+                    className="h-4 w-4 accent-signal-cyan"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <fieldset className="space-y-3 text-sm text-white/80">
+            <legend className="font-semibold">
+              Do you prefer events that are: *
+            </legend>
+            <div className="space-y-2">
+              {[
+                "Highly structured (curated panels, pitch reviews, technical workshops)",
+                "Loosely facilitated (intimate dinners, founder office hours, Q&A's)",
+                "Completely organic (mixers, open-house nights, bonding field trips)",
+              ].map((option) => (
+                <label key={option} className="flex items-start gap-2">
+                  <input
+                    required
+                    type="radio"
+                    name="eventPreference"
+                    value={option}
+                    className="mt-1 h-4 w-4 accent-signal-cyan"
+                  />
+                  <span>{option}</span>
+                </label>
+              ))}
+            </div>
+          </fieldset>
+
+          <label className="block space-y-2 text-sm text-white/80">
+            <span className="font-semibold">
+              Is there anything else we should know to understand your trajectory as a
+              builder?
+            </span>
+            <textarea
+              name="additionalInfo"
+              rows={4}
+              value={extraResponse}
+              onChange={(event) => setExtraResponse(event.target.value)}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
+              placeholder="Optional additional context."
+            />
+            <div className="flex flex-wrap justify-between text-xs text-white/60">
+              <span>Optional.</span>
+              <span>{extraWordCount} words</span>
+            </div>
           </label>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
