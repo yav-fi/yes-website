@@ -239,17 +239,21 @@ export default function YaleHackerHouseApplyPage() {
             <legend className="font-semibold">
               Are you fully committed to building full-time this summer for 10 weeks? *
             </legend>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3">
               {["YES", "NO"].map((option) => (
-                <label key={option} className="flex items-center gap-2">
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10"
+                >
                   <input
                     required
                     type="radio"
                     name="fullTimeCommitment"
                     value={option}
-                    className="h-4 w-4 accent-signal-cyan"
+                    className="peer sr-only"
                   />
-                  <span>{option}</span>
+                  <span className="font-semibold text-white">{option}</span>
+                  <span className="h-3 w-3 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                 </label>
               ))}
             </div>
@@ -259,17 +263,21 @@ export default function YaleHackerHouseApplyPage() {
             <legend className="font-semibold">
               If accepted, are you 100% committed to joining the house? *
             </legend>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3">
               {["YES", "NO"].map((option) => (
-                <label key={option} className="flex items-center gap-2">
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10"
+                >
                   <input
                     required
                     type="radio"
                     name="houseCommitment"
                     value={option}
-                    className="h-4 w-4 accent-signal-cyan"
+                    className="peer sr-only"
                   />
-                  <span>{option}</span>
+                  <span className="font-semibold text-white">{option}</span>
+                  <span className="h-3 w-3 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                 </label>
               ))}
             </div>
@@ -280,17 +288,21 @@ export default function YaleHackerHouseApplyPage() {
               Do you hope to take time off (e.g., 1-2 semesters) or drop out? (Does not
               impact your acceptance) *
             </legend>
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid gap-3">
               {["YES", "NO"].map((option) => (
-                <label key={option} className="flex items-center gap-2">
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10"
+                >
                   <input
                     required
                     type="radio"
                     name="timeOff"
                     value={option}
-                    className="h-4 w-4 accent-signal-cyan"
+                    className="peer sr-only"
                   />
-                  <span>{option}</span>
+                  <span className="font-semibold text-white">{option}</span>
+                  <span className="h-3 w-3 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                 </label>
               ))}
             </div>
@@ -300,21 +312,25 @@ export default function YaleHackerHouseApplyPage() {
             <legend className="font-semibold">
               Do you prefer events that are: *
             </legend>
-            <div className="space-y-2">
+            <div className="space-y-3">
               {[
                 "Highly structured (curated panels, pitch reviews, technical workshops)",
                 "Loosely facilitated (intimate dinners, founder office hours, Q&A's)",
                 "Completely organic (mixers, open-house nights, bonding field trips)",
               ].map((option) => (
-                <label key={option} className="flex items-start gap-2">
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-start justify-between gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10"
+                >
                   <input
                     required
                     type="radio"
                     name="eventPreference"
                     value={option}
-                    className="mt-1 h-4 w-4 accent-signal-cyan"
+                    className="peer sr-only"
                   />
-                  <span>{option}</span>
+                  <span className="text-white/90">{option}</span>
+                  <span className="mt-1 h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                 </label>
               ))}
             </div>
