@@ -311,11 +311,23 @@ export const programs: Program[] = [
     ctas: [
       {
         label: "Apply",
-        href: "https://docs.google.com/forms/d/e/1FAIpQLSeNNhvuHI3ALUosGiLUh0cWQQMVC_z9pcvINWT9yIKb41kDoA/viewform?usp=header",
+        href: "/programs/yale-hacker-house/apply",
         variant: "primary",
       },
     ],
     sections: [
+      {
+        title: "Apply",
+        body:
+          "Ready to join Yale's first hacker house? Complete the on-site application to be considered for Summer 2026.",
+        actions: [
+          {
+            label: "Start application",
+            href: "/programs/yale-hacker-house/apply",
+            variant: "primary",
+          },
+        ],
+      },
       {
         title: "How it works",
         body:
