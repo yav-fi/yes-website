@@ -34,3 +34,36 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Supabase setup (Hacker House applications)
+
+Create a Supabase project and add a `hacker_house_applications` table with the fields needed by the application form.
+You can run the SQL below in the Supabase SQL editor:
+
+```sql
+create table if not exists public.hacker_house_applications (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamp with time zone not null default now(),
+  first_name text not null,
+  last_name text not null,
+  full_name text not null,
+  email text not null,
+  problem_response text not null,
+  interesting_build_response text not null,
+  progress_response text not null,
+  builder_vision_response text not null,
+  helpful_response text not null,
+  additional_info text,
+  full_time_commitment boolean not null,
+  house_commitment boolean not null,
+  time_off boolean not null,
+  event_preference text not null
+);
+```
+
+Set the Supabase credentials as environment variables (server-only) so the API route can insert securely:
+
+```bash
+SUPABASE_URL=your-project-url
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+```

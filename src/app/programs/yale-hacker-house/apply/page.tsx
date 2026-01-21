@@ -22,6 +22,10 @@ export default function YaleHackerHouseApplyPage() {
   const [builderResponse, setBuilderResponse] = useState("");
   const [helpResponse, setHelpResponse] = useState("");
   const [extraResponse, setExtraResponse] = useState("");
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
 
   const problemWordCount = useMemo(
     () => countWords(problemResponse),
@@ -42,6 +46,47 @@ export default function YaleHackerHouseApplyPage() {
   const helpWordCount = useMemo(() => countWords(helpResponse), [helpResponse]);
   const extraWordCount = useMemo(() => countWords(extraResponse), [extraResponse]);
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmissionStatus("submitting");
+    setSubmissionMessage(null);
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/hacker-house/apply", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        throw new Error(result?.error ?? "Unable to submit your application.");
+      }
+
+      setSubmissionStatus("success");
+      setSubmissionMessage(
+        "Application submitted! We'll be in touch if we need anything else."
+      );
+      event.currentTarget.reset();
+      setProblemResponse("");
+      setInterestingResponse("");
+      setProgressResponse("");
+      setBuilderResponse("");
+      setHelpResponse("");
+      setExtraResponse("");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Unable to submit your application.";
+      setSubmissionStatus("error");
+      setSubmissionMessage(message);
+    }
+  };
+
   return (
     <section className="py-16">
       <Container>
@@ -58,7 +103,7 @@ export default function YaleHackerHouseApplyPage() {
           </p>
         </div>
 
-        <form className="mt-10 space-y-8" method="post">
+        <form className="mt-10 space-y-8" method="post" onSubmit={handleSubmit}>
           <div className="grid gap-6 md:grid-cols-2">
             <label className="space-y-2 text-sm text-white/80">
               <span className="font-semibold">First name *</span>
@@ -301,11 +346,21 @@ export default function YaleHackerHouseApplyPage() {
             </p>
             <button
               type="submit"
+              disabled={submissionStatus === "submitting"}
               className="inline-flex items-center justify-center rounded-full border border-signal-cyan/40 bg-signal-cyan/10 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-signal-cyan/20"
             >
-              Submit application
+              {submissionStatus === "submitting" ? "Submitting..." : "Submit application"}
             </button>
           </div>
+          {submissionMessage && (
+            <p
+              className={`text-sm ${
+                submissionStatus === "success" ? "text-emerald-300" : "text-rose-300"
+              }`}
+            >
+              {submissionMessage}
+            </p>
+          )}
         </form>
       </Container>
     </section>
