@@ -98,8 +98,7 @@ export default function YaleHackerHouseApplyPage() {
             Apply for Summer 2026
           </h1>
           <p className="mt-4 text-white/70">
-            This on-site application mirrors the full Yale Hacker House form. All
-            fields marked as required must be completed before submission.
+            All fields marked as required must be completed before submission.
           </p>
         </div>
 
