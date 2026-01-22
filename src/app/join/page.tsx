@@ -1,4 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
+
+export const metadata: Metadata = {
+  title: "Join",
+  description:
+    "Join the Yale Entrepreneurial Society (YES) community and stay connected with Yale founders and builders.",
+  alternates: {
+    canonical: "/join",
+  },
+};
+
 export default function JoinPage() {
   return (
     <section className="py-16">

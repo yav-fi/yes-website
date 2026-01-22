@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { Wrench } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about the Yale Entrepreneurial Society (YES) and our mission to build Yale's entrepreneurship community.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (

@@ -53,7 +53,9 @@ export default function HomeHero({ play }: { play: boolean }) {
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-xl text-lg text-white/75 md:text-xl">
-            
+            Yale Entrepreneurial Society (YES) is Yale's student entrepreneurship hub,
+            connecting founders, builders, and innovators through high-signal programs,
+            speaker series, and startup community.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-3">

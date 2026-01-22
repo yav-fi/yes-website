@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { Wrench } from "lucide-react";
 // import SectionHeading from "@/components/ui/SectionHeading";
 // import TeamGrid from "@/components/sections/team/TeamGrid";
 // import Reveal from "@/components/ui/Reveal";
+
+export const metadata: Metadata = {
+  title: "Team",
+  description:
+    "Meet the Yale Entrepreneurial Society student team building Yale's entrepreneurship community.",
+  alternates: {
+    canonical: "/team",
+  },
+};
 
 export default function TeamPage() {
   return (

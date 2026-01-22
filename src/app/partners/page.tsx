@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import { Wrench } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Partners",
+  description:
+    "Partners and supporters of the Yale Entrepreneurial Society (YES) and Yale entrepreneurship.",
+  alternates: {
+    canonical: "/partners",
+  },
+};
 
 export default function PartnersPage() {
   return (

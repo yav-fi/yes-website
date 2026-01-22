@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Chip from "@/components/ui/Chip";
 import { events } from "@/data/events";
 import Reveal from "@/components/ui/Reveal";
+import { absoluteUrl } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Events",
+  description:
+    "Upcoming Yale Entrepreneurial Society events including talks, workshops, founder dinners, and showcases.",
+  alternates: {
+    canonical: "/events",
+  },
+};
 
 function formatLong(iso: string) {
   const d = new Date(iso);
@@ -16,9 +27,34 @@ function formatLong(iso: string) {
 }
 
 export default function EventsPage() {
+  const eventSchema = {
+    "@context": "https://schema.org",
+    "@graph": events.map((event) => ({
+      "@type": "Event",
+      name: event.title,
+      startDate: event.date,
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      eventStatus: "https://schema.org/EventScheduled",
+      location: {
+        "@type": "Place",
+        name: event.location,
+      },
+      description: event.desc,
+      organizer: {
+        "@type": "Organization",
+        name: "Yale Entrepreneurial Society",
+        url: absoluteUrl("/"),
+      },
+    })),
+  };
+
   return (
     <section className="py-16">
       <Container>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
         <Reveal>
           <SectionHeading
             eyebrow="Events"
