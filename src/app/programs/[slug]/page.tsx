@@ -12,9 +12,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const program = programs.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const program = programs.find((p) => p.slug === slug);
   if (!program) {
     return {
       title: "Program",
@@ -39,9 +40,9 @@ export async function generateMetadata({
 export default async function ProgramLaunchPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  const { slug } = await params;
   const program = programs.find((p) => p.slug === slug);
   if (!program) return notFound();
 
