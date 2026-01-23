@@ -99,7 +99,7 @@ export default function YaleHackerHouseApplyPage() {
             Apply for Summer 2026
           </h1>
           <p className="mt-4 text-white/70">
-            All fields marked as required must be completed before submission.
+            Due Sunday, February 1st at 11:50 PM.
           </p>
         </div>
 
