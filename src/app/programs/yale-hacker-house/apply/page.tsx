@@ -380,7 +380,7 @@ export default function YaleHackerHouseApplyPage() {
             {submissionMessage && (
               <p
                 className={`text-sm ${
-                  submissionStatus === "success" ? "text-emerald-300" : "text-rose-300"
+                  submissionStatus === "error" ? "text-rose-300" : "text-emerald-300"
                 }`}
               >
                 {submissionMessage}
