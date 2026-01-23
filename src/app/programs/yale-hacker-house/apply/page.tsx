@@ -254,7 +254,10 @@ export default function YaleHackerHouseApplyPage() {
               </legend>
               <div className="grid gap-3">
                 {["YES", "NO"].map((option) => (
-                  <label key={option} className="cursor-pointer">
+                  <label
+                    key={option}
+                    className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 has-[:checked]:border-signal-cyan/60 has-[:checked]:bg-signal-cyan/20 has-[:checked]:ring-1 has-[:checked]:ring-signal-cyan/40"
+                  >
                     <input
                       required
                       type="radio"
@@ -262,10 +265,8 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
-                      <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
-                      <span className="font-semibold text-white">{option}</span>
-                    </span>
+                    <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
+                    <span className="font-semibold text-white">{option}</span>
                   </label>
                 ))}
               </div>
@@ -277,7 +278,10 @@ export default function YaleHackerHouseApplyPage() {
               </legend>
               <div className="grid gap-3">
                 {["YES", "NO"].map((option) => (
-                  <label key={option} className="cursor-pointer">
+                  <label
+                    key={option}
+                    className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 has-[:checked]:border-signal-cyan/60 has-[:checked]:bg-signal-cyan/20 has-[:checked]:ring-1 has-[:checked]:ring-signal-cyan/40"
+                  >
                     <input
                       required
                       type="radio"
@@ -285,10 +289,8 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
-                      <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
-                      <span className="font-semibold text-white">{option}</span>
-                    </span>
+                    <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
+                    <span className="font-semibold text-white">{option}</span>
                   </label>
                 ))}
               </div>
@@ -301,7 +303,10 @@ export default function YaleHackerHouseApplyPage() {
               </legend>
               <div className="grid gap-3">
                 {["YES", "NO"].map((option) => (
-                  <label key={option} className="cursor-pointer">
+                  <label
+                    key={option}
+                    className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 has-[:checked]:border-signal-cyan/60 has-[:checked]:bg-signal-cyan/20 has-[:checked]:ring-1 has-[:checked]:ring-signal-cyan/40"
+                  >
                     <input
                       required
                       type="radio"
@@ -309,10 +314,8 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
-                      <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
-                      <span className="font-semibold text-white">{option}</span>
-                    </span>
+                    <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
+                    <span className="font-semibold text-white">{option}</span>
                   </label>
                 ))}
               </div>
@@ -326,7 +329,10 @@ export default function YaleHackerHouseApplyPage() {
                   "Loosely facilitated (intimate dinners, founder office hours, Q&A's)",
                   "Completely organic (mixers, open-house nights, bonding field trips)",
                 ].map((option) => (
-                  <label key={option} className="cursor-pointer">
+                  <label
+                    key={option}
+                    className="flex cursor-pointer items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 has-[:checked]:border-signal-cyan/60 has-[:checked]:bg-signal-cyan/20 has-[:checked]:ring-1 has-[:checked]:ring-signal-cyan/40"
+                  >
                     <input
                       required
                       type="radio"
@@ -334,10 +340,8 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
-                      <span className="mt-1 h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
-                      <span className="text-white/90">{option}</span>
-                    </span>
+                    <span className="mt-1 h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
+                    <span className="text-white/90">{option}</span>
                   </label>
                 ))}
               </div>
