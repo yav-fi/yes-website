@@ -167,7 +167,7 @@ export default function YaleHackerHouseApplyPage() {
                 placeholder="Share the problem and why you are uniquely positioned to solve it."
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
-                <span>Aim for ~{WORD_TARGETS.long} words.</span>
+                <span>Limit: {WORD_TARGETS.long} words.</span>
                 <span>{problemWordCount} words</span>
               </div>
             </label>
@@ -186,7 +186,7 @@ export default function YaleHackerHouseApplyPage() {
                 placeholder="Highlight what you built, your role, and the impact."
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
-                <span>Aim for ~{WORD_TARGETS.long} words.</span>
+                <span>Limit: {WORD_TARGETS.long} words.</span>
                 <span>{interestingWordCount} words</span>
               </div>
             </label>
@@ -205,7 +205,7 @@ export default function YaleHackerHouseApplyPage() {
                 placeholder="Share tangible milestones, product updates, or traction."
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
-                <span>Aim for ~{WORD_TARGETS.short} words.</span>
+                <span>Limit: {WORD_TARGETS.short} words.</span>
                 <span>{progressWordCount} words</span>
               </div>
             </label>
@@ -224,7 +224,7 @@ export default function YaleHackerHouseApplyPage() {
                 placeholder="Describe the future you want to build toward."
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
-                <span>Aim for ~{WORD_TARGETS.short} words.</span>
+                <span>Limit: {WORD_TARGETS.short} words.</span>
                 <span>{builderWordCount} words</span>
               </div>
             </label>
@@ -243,7 +243,7 @@ export default function YaleHackerHouseApplyPage() {
                 placeholder="Share the support, resources, or connections you need most."
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
-                <span>Aim for ~{WORD_TARGETS.short} words.</span>
+                <span>Limit: {WORD_TARGETS.short} words.</span>
                 <span>{helpWordCount} words</span>
               </div>
             </label>
@@ -262,7 +262,7 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20">
+                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
                       <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                       <span className="font-semibold text-white">{option}</span>
                     </span>
@@ -285,7 +285,7 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20">
+                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
                       <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                       <span className="font-semibold text-white">{option}</span>
                     </span>
@@ -309,7 +309,7 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20">
+                    <span className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
                       <span className="h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                       <span className="font-semibold text-white">{option}</span>
                     </span>
@@ -334,7 +334,7 @@ export default function YaleHackerHouseApplyPage() {
                       value={option}
                       className="peer sr-only"
                     />
-                    <span className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20">
+                    <span className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 transition hover:border-white/30 hover:bg-white/10 peer-checked:border-signal-cyan/60 peer-checked:bg-signal-cyan/20 peer-checked:ring-1 peer-checked:ring-signal-cyan/40">
                       <span className="mt-1 h-3 w-3 shrink-0 rounded-full border border-white/30 transition peer-checked:border-signal-cyan/80 peer-checked:bg-signal-cyan/70" />
                       <span className="text-white/90">{option}</span>
                     </span>
