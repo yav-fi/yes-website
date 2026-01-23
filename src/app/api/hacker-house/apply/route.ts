@@ -3,8 +3,8 @@ const RATE_LIMIT_MAX_REQUESTS = 5;
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 
 const WORD_LIMITS = {
-  long: { min: 50, max: 200 },
-  short: { min: 25, max: 120 },
+  long: { max: 200 },
+  short: { max: 120 },
   optional: { max: 200 },
 };
 
