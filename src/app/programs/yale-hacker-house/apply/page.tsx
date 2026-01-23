@@ -99,14 +99,14 @@ export default function YaleHackerHouseApplyPage() {
             Apply for Summer 2026
           </h1>
           <p className="mt-4 text-white/70">
-            All fields marked as required must be completed before submission.
+            Due Sunday, February 1st at 11:50 PM.
           </p>
         </div>
 
         {submissionStatus === "success" ? (
           <div className="mt-10 rounded-3xl border border-emerald-400/30 bg-emerald-400/10 px-6 py-8 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">
-              Application received
+              Application submitted
             </p>
             <h2 className="mt-3 text-balance text-2xl font-semibold">
               Thanks for applying to the Yale Hacker House.
@@ -125,7 +125,7 @@ export default function YaleHackerHouseApplyPage() {
                   name="firstName"
                   autoComplete="given-name"
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                  placeholder="Jane"
+                  placeholder="First"
                 />
               </label>
               <label className="space-y-2 text-sm text-white/80">
@@ -135,7 +135,7 @@ export default function YaleHackerHouseApplyPage() {
                   name="lastName"
                   autoComplete="family-name"
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                  placeholder="Doe"
+                  placeholder="Last"
                 />
               </label>
             </div>
@@ -148,7 +148,7 @@ export default function YaleHackerHouseApplyPage() {
                 name="email"
                 autoComplete="email"
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="jane@college.edu"
+                placeholder="you@yale.edu"
               />
             </label>
 
@@ -164,7 +164,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={problemResponse}
                 onChange={(event) => setProblemResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Share the problem and why you are uniquely positioned to solve it."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Limit: {WORD_TARGETS.long} words.</span>
@@ -183,7 +183,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={interestingResponse}
                 onChange={(event) => setInterestingResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Highlight what you built, your role, and the impact."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Limit: {WORD_TARGETS.long} words.</span>
@@ -202,7 +202,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={progressResponse}
                 onChange={(event) => setProgressResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Share tangible milestones, product updates, or traction."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Limit: {WORD_TARGETS.short} words.</span>
@@ -221,7 +221,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={builderResponse}
                 onChange={(event) => setBuilderResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Describe the future you want to build toward."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Limit: {WORD_TARGETS.short} words.</span>
@@ -240,7 +240,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={helpResponse}
                 onChange={(event) => setHelpResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Share the support, resources, or connections you need most."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Limit: {WORD_TARGETS.short} words.</span>
@@ -358,7 +358,7 @@ export default function YaleHackerHouseApplyPage() {
                 value={extraResponse}
                 onChange={(event) => setExtraResponse(event.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-signal-cyan/60"
-                placeholder="Optional additional context."
+                placeholder="Answer here"
               />
               <div className="flex flex-wrap justify-between text-xs text-white/60">
                 <span>Optional.</span>
