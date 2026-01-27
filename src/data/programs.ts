@@ -138,7 +138,7 @@ export const programs: Program[] = [
           {
             title: "What is LAUNCH?",
             body:
-              "After a hype first summer, LAUNCH is back for its second iteration! LAUNCH is a Camp Yale Program focused on helping incoming students develop the skills for successful innovation and entrepreneurship. Now, we're hiring student leaders to help run it! LAUNCH programming will include collaborative workshops, exciting alumni speakers, and bonding activities. Last year, LAUNCH featured Max Mullen of Instacart, Michael Seibel of Twitch and YCombinator, Anne Wojcicki of 23andMe, and many others! Students will explore all of the resources available to them at Yale, such as the Tsai Center for Innovative Thinking at Yale (Tsai CITY) and the Center for Engineering Innovation and Design (CEID). You'll help new first-year students discover ways in which they can be disruptive, change-making, and innovative, all while building a more inclusive entrepreneurial community.",
+              "LAUNCH is a Camp Yale Program focused on helping incoming students develop the skills for successful innovation and entrepreneurship. Now, we're hiring student leaders to help run it! LAUNCH programming will include collaborative workshops, exciting alumni speakers, and bonding activities. Last year, LAUNCH featured Max Mullen of Instacart, Michael Seibel of Twitch and YCombinator, Anne Wojcicki of 23andMe, and many others! Students will explore all of the resources available to them at Yale, such as the Tsai Center for Innovative Thinking at Yale (Tsai CITY) and the Center for Engineering Innovation and Design (CEID). You'll help new first-year students discover ways in which they can be disruptive, change-making, and innovative, all while building a more inclusive entrepreneurial community.",
           },
           {
             title: "Responsibilities",
@@ -153,15 +153,7 @@ export const programs: Program[] = [
           {
             title: "Compensation",
             body:
-              "All student leaders will be paid a stipend and have room and board covered from the time they arrive for training until the residences open.",
-          },
-          {
-            title: "LAUNCH Program Goals",
-            items: [
-              "1. Comfort: Ensure that incoming students feel Yale is a safe and welcoming environment by helping them learn the campus and make a few friends!",
-              "2. Exploration: Expose Yale students to all the resources available to them, as well as how they can get involved in the entrepreneurial ecosystem.",
-              "3. DEI: Help inspire students to create a more diverse and inclusive entrepreneurial community.",
-            ],
+              "All student leaders will be paid a stipend and have room and board from the time they arrive for training until the residences open.",
           },
           {
             title: "Key Dates (Fall 2026)",
@@ -180,7 +172,7 @@ export const programs: Program[] = [
           {
             title: "Application deadline",
             body:
-              "The application deadline for Summer 2026 has not been announced yet.",
+              "The application deadline is Feb 6th 2026 at 11:59 PM EST.",
           },
         ],
       },
