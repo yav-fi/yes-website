@@ -158,11 +158,10 @@ export const programs: Program[] = [
           {
             title: "Key Dates (Fall 2026)",
             items: [
-              "Around August 12-16: Move in",
-              "Around August 17: Training",
-              "Around August 18: First-year move in",
-              "Around August 19-21: First-year general orientation",
-              "Around August 21-25: Orientation programs run",
+              "August 22 (estimated): Move in",
+"August 23: Leaders training excursion ",
+"August 24: First-year move in",
+"August 26-30: Orientation programs run",
             ],
           },
           {
@@ -172,7 +171,7 @@ export const programs: Program[] = [
           {
             title: "Application deadline",
             body:
-              "The application deadline is Feb 6th 2026 at 11:59 PM EST.",
+              "The application deadline is Feb 20th 2026 at 11:59 PM EST.",
           },
         ],
       },
