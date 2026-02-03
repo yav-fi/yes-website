@@ -159,14 +159,14 @@ export const programs: Program[] = [
             title: "Key Dates (Fall 2026)",
             items: [
               "August 22 (estimated): Move in",
-"August 23: Leaders training excursion ",
-"August 24: First-year move in",
-"August 26-30: Orientation programs run",
+              "August 23: Leaders training excursion ",
+              "August 24: First-year move in",
+              "August 26-30: Orientation programs run",
             ],
           },
           {
             title: "Availability",
-            body: "The availability all counselors must have hasn't been announced yet.",
+            body: "ALL LEADERS MUST BE AVAILABLE AUGUST 22-30.",
           },
           {
             title: "Application deadline",
